@@ -35,7 +35,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle className="w-5 h-5" />
-                <span>99.9% Accuracy Rate</span>
+                <span>100% Accuracy Rate</span>
               </div>
             </div>
 

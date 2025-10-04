@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, MapPin, Linkedin, Twitter, Facebook } from "lucide-react";
+import { Facebook, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 
 const Footer = () => {
   const services = [
     "Bookkeeping & Reporting",
-    "Payroll Management", 
+    "Payroll Management",
     "Tax Preparation",
     "Trust Account Management",
     "E-commerce Accounting",
-    "White-Label Outsourcing"
+    "White-Label Outsourcing",
   ];
 
   const industries = [
@@ -16,8 +16,8 @@ const Footer = () => {
     "Law Firms",
     "Small Businesses",
     "E-commerce",
-    "Restaurants", 
-    "Healthcare"
+    "Restaurants",
+    "Healthcare",
   ];
 
   return (
@@ -29,11 +29,12 @@ const Footer = () => {
             <div>
               <h3 className="text-2xl font-bold mb-2">Shiv Accounting</h3>
               <p className="text-primary-foreground/80 text-sm leading-relaxed">
-                Professional accounting and business services for US companies. 
-                Trusted by CPAs, law firms, and businesses nationwide since 2019.
+                Professional accounting and business services for US companies.
+                Trusted by CPAs, law firms, and businesses nationwide since
+                2019.
               </p>
             </div>
-            
+
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm">
                 <Mail className="w-4 h-4" />
@@ -56,8 +57,8 @@ const Footer = () => {
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service}>
-                  <a 
-                    href="#services" 
+                  <a
+                    href="#services"
                     className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {service}
@@ -73,8 +74,8 @@ const Footer = () => {
             <ul className="space-y-2">
               {industries.map((industry) => (
                 <li key={industry}>
-                  <a 
-                    href="#about" 
+                  <a
+                    href="#about"
                     className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {industry}
@@ -88,30 +89,32 @@ const Footer = () => {
           <div className="space-y-6">
             <h4 className="text-lg font-semibold">Get Started</h4>
             <p className="text-sm text-primary-foreground/80">
-              Ready to streamline your accounting? Schedule a free consultation today.
+              Ready to streamline your accounting? Schedule a free consultation
+              today.
             </p>
             <Button variant="secondary" size="lg" className="w-full">
               Free Consultation
             </Button>
-            
+
             {/* Social Links */}
             <div className="flex gap-4">
-              <a 
-                href="#" 
+              <a
+                href="https://www.linkedin.com/company/shiv-accounting"
+                target="_blank"
                 className="w-8 h-8 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-8 h-8 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="w-4 h-4" />
               </a>
-              <a 
-                href="#" 
+              <a
+                href="#"
                 className="w-8 h-8 rounded-full bg-primary-foreground/10 hover:bg-primary-foreground/20 flex items-center justify-center transition-colors"
                 aria-label="Facebook"
               >
@@ -127,15 +130,24 @@ const Footer = () => {
             <div className="text-sm text-primary-foreground/80">
               © 2024 Shiv Accounting and Business Services. All rights reserved.
             </div>
-            
+
             <div className="flex gap-6 text-sm">
-              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <a
+                href="#"
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+              >
                 Privacy Policy
               </a>
-              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <a
+                href="#"
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+              >
                 Terms of Service
               </a>
-              <a href="#" className="text-primary-foreground/80 hover:text-primary-foreground transition-colors">
+              <a
+                href="#"
+                className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+              >
                 Cookie Policy
               </a>
             </div>

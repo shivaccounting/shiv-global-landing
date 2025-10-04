@@ -1,16 +1,16 @@
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Badge } from "@/components/ui/badge";
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
-  Clock, 
-  Calculator,
+import {
   ArrowRight,
-  CheckCircle
+  Calculator,
+  CheckCircle,
+  Clock,
+  Mail,
+  MapPin,
+  Phone,
 } from "lucide-react";
 
 const Contact = () => {
@@ -18,22 +18,22 @@ const Contact = () => {
     {
       icon: Phone,
       title: "Phone",
-      details: ["US: +1 (555) 123-4567", "India: +91 98765 43210"],
+      details: ["India: +91 83067 44700"],
     },
     {
       icon: Mail,
-      title: "Email", 
-      details: ["info@shivaccounting.com", "support@shivaccounting.com"],
+      title: "Email",
+      details: ["kailash@shivaccounting.com"],
     },
     {
       icon: MapPin,
       title: "Office",
-      details: ["New Delhi, India", "Serving US Businesses Globally"],
+      details: [" Porbandar, Gujarat, India"],
     },
     {
       icon: Clock,
       title: "Business Hours",
-      details: ["Mon-Fri: 9 AM - 6 PM EST", "24/7 Support Available"],
+      details: ["Mon-Fri: 9 AM - 6 PM IST", "24/7 Support Available"],
     },
   ];
 
@@ -43,26 +43,27 @@ const Contact = () => {
       price: "$500",
       period: "/month",
       features: [
-        "Monthly reconciliations",
-        "Financial reports", 
-        "AP/AR management",
-        "Payroll support (optional)",
-        "Tax-ready books"
+        "Bank and CC updation",
+        "Monthly Reconciliation",
+        "Payroll Updation",
+        "Financials report with Insight",
+        "Tax Ready Books",
       ],
-      popular: false
+      popular: false,
     },
     {
       name: "Complete Package",
       price: "$750",
-      period: "/month", 
+      period: "/month",
       features: [
         "Everything in Bookkeeping",
         "Full payroll management",
-        "Tax preparation & filing",
+        "Bills and Invoice updation",
+        "AP & AR Tracking",
         "Trust account management",
-        "Dedicated account manager"
+        "Dedicated account manager",
       ],
-      popular: true
+      popular: true,
     },
     {
       name: "Enterprise Solution",
@@ -71,12 +72,12 @@ const Contact = () => {
       features: [
         "White-label outsourcing",
         "Dedicated offshore team",
-        "Multiple entity management", 
+        "Multiple entity management",
         "Custom integrations",
-        "Priority support"
+        "Priority support",
       ],
-      popular: false
-    }
+      popular: false,
+    },
   ];
 
   return (
@@ -86,11 +87,14 @@ const Contact = () => {
         <div className="text-center mb-16 space-y-4 animate-fade-in">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
             Ready to Get Started?
-            <span className="bg-gradient-accent bg-clip-text text-transparent"> Let's Talk!</span>
+            <span className="bg-gradient-accent bg-clip-text text-transparent">
+              {" "}
+              Let's Talk!
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Get in touch for a free consultation and discover how we can streamline 
-            your accounting processes and help your business grow.
+            Get in touch for a free consultation and discover how we can
+            streamline your accounting processes and help your business grow.
           </p>
         </div>
 
@@ -101,29 +105,33 @@ const Contact = () => {
               Affordable & Scalable Plans
             </h3>
             <p className="text-muted-foreground">
-              Every business is unique — that's why our pricing is tailored to your needs.
+              Every business is unique — that's why our pricing is tailored to
+              your needs.
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {pricingPlans.map((plan, index) => (
-              <Card 
+              <Card
                 key={plan.name}
                 className={`relative hover-lift ${
-                  plan.popular 
-                    ? 'border-accent shadow-glow bg-gradient-accent/5' 
-                    : 'border-border/50 bg-card/50'
+                  plan.popular
+                    ? "border-accent shadow-glow bg-gradient-accent/5"
+                    : "border-border/50 bg-card/50"
                 } backdrop-blur-sm`}
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 {plan.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge variant="secondary" className="bg-accent text-accent-foreground">
+                    <Badge
+                      variant="secondary"
+                      className="bg-accent text-accent-foreground"
+                    >
                       Most Popular
                     </Badge>
                   </div>
                 )}
-                
+
                 <CardHeader className="text-center pb-8">
                   <CardTitle className="text-xl mb-4">{plan.name}</CardTitle>
                   <div className="space-y-1">
@@ -134,7 +142,9 @@ const Contact = () => {
                       </span>
                     </div>
                     {plan.name === "Bookkeeping Services" && (
-                      <p className="text-sm text-muted-foreground">Starting from</p>
+                      <p className="text-sm text-muted-foreground">
+                        Starting from
+                      </p>
                     )}
                   </div>
                 </CardHeader>
@@ -149,9 +159,9 @@ const Contact = () => {
                     ))}
                   </ul>
 
-                  <Button 
-                    variant={plan.popular ? "cta" : "professional"} 
-                    size="lg" 
+                  <Button
+                    variant={plan.popular ? "cta" : "professional"}
+                    size="lg"
                     className="w-full"
                   >
                     {plan.price === "Custom" ? "Contact Us" : "Get Started"}
@@ -200,8 +210,10 @@ const Contact = () => {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-medium">How can we help you?</label>
-                <Textarea 
+                <label className="text-sm font-medium">
+                  How can we help you?
+                </label>
+                <Textarea
                   placeholder="Tell us about your accounting needs, current challenges, or questions..."
                   rows={4}
                 />
@@ -222,7 +234,7 @@ const Contact = () => {
           <div className="space-y-8">
             <div className="grid sm:grid-cols-2 gap-6">
               {contactInfo.map((info, index) => (
-                <Card 
+                <Card
                   key={info.title}
                   className="hover-lift border-border/50 bg-card/50 backdrop-blur-sm"
                   style={{ animationDelay: `${index * 100}ms` }}
@@ -235,7 +247,10 @@ const Contact = () => {
                       <div className="space-y-1">
                         <h3 className="font-semibold">{info.title}</h3>
                         {info.details.map((detail) => (
-                          <p key={detail} className="text-sm text-muted-foreground">
+                          <p
+                            key={detail}
+                            className="text-sm text-muted-foreground"
+                          >
                             {detail}
                           </p>
                         ))}
@@ -249,14 +264,16 @@ const Contact = () => {
             {/* Quick Info Card */}
             <Card className="bg-gradient-primary text-primary-foreground shadow-professional-lg">
               <CardContent className="p-8">
-                <h3 className="text-xl font-semibold mb-4">Why Choose Shiv Accounting?</h3>
+                <h3 className="text-xl font-semibold mb-4">
+                  Why Choose Shiv Accounting?
+                </h3>
                 <ul className="space-y-3">
                   {[
                     "5+ years serving US businesses",
-                    "99.9% accuracy in financial reporting", 
+                    "99.9% accuracy in financial reporting",
                     "Expertise in 15+ accounting platforms",
                     "Dedicated US time zone support",
-                    "Scalable solutions for any business size"
+                    "Scalable solutions for any business size",
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3">
                       <CheckCircle className="w-4 h-4 flex-shrink-0" />

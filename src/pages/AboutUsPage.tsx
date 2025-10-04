@@ -1,22 +1,22 @@
+import founderImage from "@/assets/founder-portrait.jpg";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { 
-  Users, 
-  Globe, 
-  TrendingUp, 
+import {
+  ArrowRight,
   Award,
   CheckCircle,
-  Target,
-  Eye,
-  ArrowRight,
-  Shield,
   Clock,
-  HeadphonesIcon
+  Eye,
+  Globe,
+  HeadphonesIcon,
+  Shield,
+  Target,
+  TrendingUp,
+  Users,
 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import founderImage from "@/assets/founder-portrait.jpg";
 
 const AboutUsPage = () => {
   const stats = [
@@ -28,111 +28,112 @@ const AboutUsPage = () => {
 
   const expertise = [
     "QuickBooks & Xero",
-    "Clio Integration", 
+    "Clio Integration",
     "ADP & Gusto Payroll",
     "Shopify & Amazon",
     "Bill.com & Dext",
-    "Form 5472 & 1099/1096",
+    "Form 1099",
     "Trust Account Management",
-    "Tax Preparation (1120, 1040)"
   ];
 
   const differentiators = [
     {
       icon: Shield,
       title: "US-Focused Expertise",
-      desc: "Deep knowledge of US accounting, tax, and payroll requirements"
+      desc: "Deep knowledge of US accounting, tax, and payroll requirements",
     },
     {
       icon: TrendingUp,
-      title: "Software Proficiency", 
-      desc: "Expert in QuickBooks, Xero, Clio, ADP, Gusto, and more"
+      title: "Software Proficiency",
+      desc: "Expert in QuickBooks, Xero, Clio, ADP, Gusto, and more",
     },
     {
       icon: Users,
       title: "Custom Solutions",
-      desc: "Tailored services for CPAs, law firms, and small businesses"
+      desc: "Tailored services for CPAs, law firms, and small businesses",
     },
     {
       icon: Globe,
       title: "Affordable & Scalable",
-      desc: "Outsourced services starting at $500/month"
-    }
+      desc: "Outsourced services starting at $500/month",
+    },
   ];
 
   const workProcess = [
     {
       step: "1",
       title: "Consultation & Needs Assessment",
-      desc: "Understanding your unique business requirements and challenges"
+      desc: "Understanding your unique business requirements and challenges",
     },
     {
-      step: "2", 
+      step: "2",
       title: "Secure Onboarding",
-      desc: "NDA & data access agreement, software setup, historical data review"
+      desc: "NDA & data access agreement, software setup, historical data review",
     },
     {
       step: "3",
       title: "Customized Setup",
-      desc: "Chart of accounts, payroll configuration, e-commerce integration"
+      desc: "Chart of accounts, payroll configuration, e-commerce integration",
     },
     {
       step: "4",
-      title: "Ongoing Bookkeeping & Reporting", 
-      desc: "Reconciliations, payroll processing, AP/AR management"
+      title: "Ongoing Bookkeeping & Reporting",
+      desc: "Reconciliations, payroll processing, AP/AR management",
     },
     {
       step: "5",
       title: "Tax-Ready Deliverables",
-      desc: "1099 forms, Form 5472, P&L, Balance Sheet, Cash Flow statements"
+      desc: "P&L, Balance Sheet, Cash Flow statements",
     },
     {
       step: "6",
       title: "Review & Support",
-      desc: "Continuous communication, adjustments, and proactive support"
-    }
+      desc: "Continuous communication, adjustments, and proactive support",
+    },
   ];
 
   const expectations = [
     {
       icon: Clock,
       title: "Timely Delivery",
-      desc: "Financial statements and reports delivered on schedule"
+      desc: "Financial statements and reports delivered on schedule",
     },
     {
       icon: Shield,
-      title: "Secure Data Handling", 
-      desc: "Safe and confidential management of all financial data"
+      title: "Secure Data Handling",
+      desc: "Safe and confidential management of all financial data",
     },
     {
       icon: Users,
       title: "Industry Expertise",
-      desc: "Experienced team handling industry-specific requirements"
+      desc: "Experienced team handling industry-specific requirements",
     },
     {
       icon: HeadphonesIcon,
       title: "Clear Communication",
-      desc: "Proactive problem-solving and transparent updates"
-    }
+      desc: "Proactive problem-solving and transparent updates",
+    },
   ];
 
   const testimonials = [
     {
-      quote: "Shiv Accounting has transformed our bookkeeping. Their team handles everything efficiently, and our CPA loves the clean tax-ready reports!",
+      quote:
+        "Shiv Accounting has transformed our bookkeeping. Their team handles everything efficiently, and our CPA loves the clean tax-ready reports!",
       author: "US Restaurant Owner",
-      industry: "Hospitality"
+      industry: "Hospitality",
     },
     {
-      quote: "Our law firm trust accounts have never been this accurate. Shiv Accounting's team is thorough, reliable, and Clio-savvy.",
-      author: "US Law Firm Partner", 
-      industry: "Legal Services"
-    }
+      quote:
+        "Our law firm trust accounts have never been this accurate. Shiv Accounting's team is thorough, reliable, and Clio-savvy.",
+      author: "US Law Firm Partner",
+      industry: "Legal Services",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="pt-24">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-subtle">
@@ -140,11 +141,15 @@ const AboutUsPage = () => {
             <div className="text-center mb-16 space-y-6 animate-fade-in">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
                 Trusted Accounting &
-                <span className="bg-gradient-secondary bg-clip-text text-transparent"> Bookkeeping Experts</span>
+                <span className="bg-gradient-secondary bg-clip-text text-transparent">
+                  {" "}
+                  Bookkeeping Experts
+                </span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Accurate, compliant, and tax-ready financial solutions for CPAs, law firms, 
-                and small businesses — offshore expertise with US standards.
+                Accurate, compliant, and tax-ready financial solutions for CPAs,
+                law firms, and small businesses — offshore expertise with US
+                standards.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="xl">
@@ -155,14 +160,15 @@ const AboutUsPage = () => {
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground">
-                Serving US clients since 2019 — QuickBooks, Xero, Clio, ADP, Gusto, Shopify, Amazon, and more.
+                Serving US clients since 2019 — QuickBooks, Xero, Clio, ADP,
+                Gusto, Shopify, Amazon, and more.
               </p>
             </div>
 
             {/* Stats */}
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {stats.map((stat, index) => (
-                <Card 
+                <Card
                   key={stat.label}
                   className="text-center hover-lift border-border/50 bg-card/50 backdrop-blur-sm"
                   style={{ animationDelay: `${index * 100}ms` }}
@@ -171,8 +177,12 @@ const AboutUsPage = () => {
                     <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-secondary flex items-center justify-center">
                       <stat.icon className="w-6 h-6 text-secondary-foreground" />
                     </div>
-                    <div className="text-3xl font-bold text-primary mb-2">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                    <div className="text-3xl font-bold text-primary mb-2">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {stat.label}
+                    </div>
                   </CardContent>
                 </Card>
               ))}
@@ -190,31 +200,41 @@ const AboutUsPage = () => {
                     How Shiv Accounting Started
                   </h2>
                   <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-                    Since 2019, Kailash Dabhi and his team have helped US businesses maintain 
-                    accurate financial records, streamline processes, and stay compliant with 
-                    US accounting and tax standards. What started as a small bookkeeping venture 
-                    in India has grown into a trusted outsourcing partner for US CPAs, small 
-                    businesses, law firms, and e-commerce companies.
+                    Since 2019, Kailash Dabhi and his team have helped US
+                    businesses maintain accurate financial records, streamline
+                    processes, and stay compliant with US accounting and tax
+                    standards. What started as a small bookkeeping venture in
+                    India has grown into a trusted outsourcing partner for US
+                    CPAs, small businesses, law firms, and e-commerce companies.
                   </p>
-                  
+
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Over 5 years of accounting, bookkeeping, payroll, and taxation experience</span>
+                      <span className="text-muted-foreground">
+                        Over 5 years of accounting, bookkeeping, payroll, and
+                        taxation experience
+                      </span>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Dedicated team trained in US accounting standards and software</span>
+                      <span className="text-muted-foreground">
+                        Dedicated team trained in US accounting standards and
+                        software
+                      </span>
                     </div>
                     <div className="flex items-start gap-3">
                       <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                      <span className="text-muted-foreground">Managing clients across the US, Canada, and Australia</span>
+                      <span className="text-muted-foreground">
+                        Managing clients across the US, Canada, and Australia
+                      </span>
                     </div>
                   </div>
                 </div>
 
                 <Button variant="professional" size="lg">
-                  Learn About Our Journey <ArrowRight className="w-4 h-4 ml-2" />
+                  Learn About Our Journey{" "}
+                  <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </div>
 
@@ -230,12 +250,15 @@ const AboutUsPage = () => {
                     </div>
                     <div className="space-y-4 text-center md:text-left">
                       <div>
-                        <h3 className="text-2xl font-semibold">Kailash Dabhi</h3>
+                        <h3 className="text-2xl font-semibold">
+                          Kailash Dabhi
+                        </h3>
                         <p className="text-muted-foreground">Founder & CEO</p>
                       </div>
                       <blockquote className="text-muted-foreground italic leading-relaxed">
-                        "Your financial data is handled by certified professionals with 
-                        a commitment to accuracy, confidentiality, and compliance."
+                        "Your financial data is handled by certified
+                        professionals with a commitment to accuracy,
+                        confidentiality, and compliance."
                       </blockquote>
                     </div>
                   </div>
@@ -245,9 +268,9 @@ const AboutUsPage = () => {
                   <h3 className="text-xl font-semibold">Our Expertise</h3>
                   <div className="flex flex-wrap gap-3">
                     {expertise.map((skill) => (
-                      <Badge 
-                        key={skill} 
-                        variant="secondary" 
+                      <Badge
+                        key={skill}
+                        variant="secondary"
                         className="px-3 py-1 text-sm hover:bg-secondary-light transition-colors"
                       >
                         {skill}
@@ -273,9 +296,10 @@ const AboutUsPage = () => {
                     <h2 className="text-2xl font-bold">Our Mission</h2>
                   </div>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    Empower US-based businesses and CPAs by providing accurate, tax-ready, 
-                    and cost-effective accounting, bookkeeping, payroll, and trust account 
-                    solutions, allowing them to focus on growth and core operations.
+                    Empower US-based businesses and CPAs by providing accurate,
+                    tax-ready, and cost-effective accounting, bookkeeping,
+                    payroll, and trust account solutions, allowing them to focus
+                    on growth and core operations.
                   </p>
                 </CardContent>
               </Card>
@@ -289,9 +313,9 @@ const AboutUsPage = () => {
                     <h2 className="text-2xl font-bold">Our Vision</h2>
                   </div>
                   <p className="text-lg text-muted-foreground leading-relaxed">
-                    To become the most trusted offshore accounting and bookkeeping partner 
-                    for US clients, delivering seamless services with professionalism, 
-                    accuracy, and transparency.
+                    To become the most trusted offshore accounting and
+                    bookkeeping partner for US clients, delivering seamless
+                    services with professionalism, accuracy, and transparency.
                   </p>
                 </CardContent>
               </Card>
@@ -303,15 +327,18 @@ const AboutUsPage = () => {
         <section className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">What Sets Us Apart</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                What Sets Us Apart
+              </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                We combine offshore efficiency with US expertise to deliver exceptional results
+                We combine offshore efficiency with US expertise to deliver
+                exceptional results
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {differentiators.map((item, index) => (
-                <Card 
+                <Card
                   key={item.title}
                   className="p-6 hover-lift text-center"
                   style={{ animationDelay: `${index * 100}ms` }}
@@ -333,15 +360,18 @@ const AboutUsPage = () => {
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">How We Work With You</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                How We Work With You
+              </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                Our proven 6-step process ensures seamless onboarding and ongoing success
+                Our proven 6-step process ensures seamless onboarding and
+                ongoing success
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8">
               {workProcess.map((item, index) => (
-                <Card 
+                <Card
                   key={item.step}
                   className="p-6 hover-lift"
                   style={{ animationDelay: `${index * 100}ms` }}
@@ -352,7 +382,9 @@ const AboutUsPage = () => {
                         {item.step}
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                        <h3 className="font-semibold text-lg mb-2">
+                          {item.title}
+                        </h3>
                         <p className="text-muted-foreground">{item.desc}</p>
                       </div>
                     </div>
@@ -363,7 +395,8 @@ const AboutUsPage = () => {
 
             <div className="text-center mt-12">
               <Button variant="cta" size="xl">
-                Start Your Accounting Setup <ArrowRight className="w-5 h-5 ml-2" />
+                Start Your Accounting Setup{" "}
+                <ArrowRight className="w-5 h-5 ml-2" />
               </Button>
             </div>
           </div>
@@ -373,15 +406,18 @@ const AboutUsPage = () => {
         <section className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">What You Can Expect</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                What You Can Expect
+              </h2>
               <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-                We are committed to being your trusted financial partner, helping your business run efficiently and compliantly
+                We are committed to being your trusted financial partner,
+                helping your business run efficiently and compliantly
               </p>
             </div>
 
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {expectations.map((item, index) => (
-                <Card 
+                <Card
                   key={item.title}
                   className="p-6 hover-lift text-center"
                   style={{ animationDelay: `${index * 100}ms` }}
@@ -403,15 +439,19 @@ const AboutUsPage = () => {
         <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Hear From Our Clients</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+                Hear From Our Clients
+              </h2>
               <p className="text-xl text-muted-foreground">
-                Accuracy & Compliance: Tax-ready financials and timely deliverables • Trusted Since 2019: Proven track record with multiple US clients
+                Accuracy & Compliance: Tax-ready financials and timely
+                deliverables • Trusted Since 2019: Proven track record with
+                multiple US clients
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 mb-12">
               {testimonials.map((testimonial, index) => (
-                <Card 
+                <Card
                   key={index}
                   className="p-8 hover-lift"
                   style={{ animationDelay: `${index * 200}ms` }}
@@ -422,7 +462,9 @@ const AboutUsPage = () => {
                     </blockquote>
                     <div>
                       <div className="font-semibold">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground">{testimonial.industry}</div>
+                      <div className="text-sm text-muted-foreground">
+                        {testimonial.industry}
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -435,7 +477,8 @@ const AboutUsPage = () => {
               </Button>
               <div>
                 <Button variant="hero" size="xl">
-                  Discover How We Can Help Your Business <ArrowRight className="w-5 h-5 ml-2" />
+                  Discover How We Can Help Your Business{" "}
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </div>
             </div>
@@ -449,14 +492,18 @@ const AboutUsPage = () => {
               Let's Talk About Your Business
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-              Ready to streamline your accounting and focus on growth? 
-              Get a free consultation and see how we can help your business.
+              Ready to streamline your accounting and focus on growth? Get a
+              free consultation and see how we can help your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="xl">
                 Schedule Free Consultation
               </Button>
-              <Button variant="outline" size="xl" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
+              <Button
+                variant="outline"
+                size="xl"
+                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+              >
                 Download Our Brochure
               </Button>
             </div>

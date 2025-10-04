@@ -1,31 +1,40 @@
-import { useEffect } from "react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { 
-  Calculator, 
-  Users, 
-  FileText, 
-  CreditCard, 
-  Shield, 
-  ShoppingCart, 
-  Briefcase,
+import Header from "@/components/Header";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
   ArrowRight,
+  Award,
+  Briefcase,
+  Calculator,
   CheckCircle,
   Clock,
-  Award,
-  Globe
+  CreditCard,
+  Globe,
+  Shield,
+  ShoppingCart,
+  Users,
 } from "lucide-react";
+import { useEffect } from "react";
 
 const ServicesPage = () => {
   useEffect(() => {
-    document.title = "Professional Accounting Services | Shiv Accounting & Business Services";
-    
+    document.title =
+      "Professional Accounting Services | Shiv Accounting & Business Services";
+
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute("content", "Comprehensive outsourced accounting, bookkeeping, payroll, and trust accounting services for US businesses, CPAs, and law firms. Starting from $500/month.");
+      metaDescription.setAttribute(
+        "content",
+        "Comprehensive outsourced accounting, bookkeeping, payroll, and trust accounting services for US businesses, CPAs, and law firms. Starting from $500/month."
+      );
     }
   }, []);
 
@@ -33,194 +42,218 @@ const ServicesPage = () => {
     {
       icon: Calculator,
       title: "Bookkeeping & Financial Reporting",
-      shortDesc: "Clean, compliant bookkeeping — monthly reconciliations, chart of accounts cleanups, and financial statements delivered on schedule.",
+      shortDesc:
+        "Clean, compliant bookkeeping — monthly reconciliations, chart of accounts cleanups, and financial statements delivered on schedule.",
       deliverables: [
         "Monthly bank & credit card reconciliations",
-        "P&L, Balance Sheet, Cash Flow statements", 
+        "P&L, Balance Sheet, Cash Flow statements",
         "Adjusting journal entries",
         "Tax-ready pack preparation",
-        "Chart of accounts cleanup"
+        "Chart of accounts cleanup",
       ],
-      ctaText: "Schedule a Free Bookkeeping Audit",
-      pricing: "Starting from $500/month"
+      ctaText: "Schedule a Free Bookkeeping Setup",
+      pricing: "Starting from $500/month",
     },
     {
       icon: Users,
       title: "Payroll Management",
-      shortDesc: "Complete payroll support — employee setup, payroll runs, W-2 & 1099 prep, and payroll ledger reconciliations.",
+      shortDesc:
+        "Complete payroll support — employee setup, payroll runs, W-2 & 1099 prep, and payroll ledger reconciliations.",
       deliverables: [
         "Payroll setup and processing",
         "Employee management systems",
         "W-2 & 1099 preparation",
         "PTO/benefits tracking",
         "Payroll tax support",
-        "Journal entries and reconciliation"
+        "Journal entries and reconciliation",
       ],
       ctaText: "Start Payroll Setup",
-      pricing: "Custom pricing based on headcount"
+      pricing: "Custom pricing based on headcount",
     },
-    {
-      icon: FileText,
-      title: "Taxation Support (US)",
-      shortDesc: "Tax-ready books, 1099 services, and supporting schedules prepared by expert tax professionals for CPA review.",
-      deliverables: [
-        "Tax-ready bundle preparation",
-        "1099/1096 filing support",
-        "Form 5472 assistance",
-        "Supporting schedules creation",
-        "CPA collaboration and review"
-      ],
-      ctaText: "Request a Tax-Ready Review",
-      pricing: "Included with bookkeeping packages"
-    },
+    // {
+    //   icon: FileText,
+    //   title: "Taxation Support (US)",
+    //   shortDesc: "Tax-ready books, 1099 services, and supporting schedules prepared by expert tax professionals for CPA review.",
+    //   deliverables: [
+    //     "Tax-ready bundle preparation",
+    //     "1099/1096 filing support",
+    //     "Form 5472 assistance",
+    //     "Supporting schedules creation",
+    //     "CPA collaboration and review"
+    //   ],
+    //   ctaText: "Request a Tax-Ready Review",
+    //   pricing: "Included with bookkeeping packages"
+    // },
     {
       icon: CreditCard,
       title: "Accounts Payable & Receivable",
-      shortDesc: "Streamline invoice processing, vendor payments, and receivable collections for better cash flow management.",
+      shortDesc:
+        "Streamline invoice processing, vendor payments, and receivable collections for better cash flow management.",
       deliverables: [
         "Bill.com integration and management",
         "Vendor payment processing",
-        "Invoice generation and tracking", 
+        "Invoice generation and tracking",
         "Collections management",
-        "Aging reports and analysis"
+        "Aging reports and analysis",
       ],
       ctaText: "Optimize Your Cash Flow",
-      pricing: "Add-on service from $200/month"
+      pricing: "Add-on service from $200/month",
     },
     {
       icon: ShoppingCart,
-      title: "E-commerce Accounting", 
-      shortDesc: "Reconcile marketplace settlements, map fees, and calculate COGS for online sellers across multiple platforms.",
+      title: "E-commerce Accounting",
+      shortDesc:
+        "Reconcile marketplace settlements, map fees, and calculate COGS for online sellers across multiple platforms.",
       deliverables: [
         "Shopify, Amazon, WooCommerce reconciliation",
         "Marketplace fees mapping",
         "COGS calculation and tracking",
         "Multi-platform inventory management",
-        "Sales tax compliance support"
+        "Sales tax compliance support",
       ],
       ctaText: "Clean Up My E-commerce Books",
-      pricing: "Starting from $800/month"
+      pricing: "Starting from $800/month",
     },
     {
       icon: Shield,
       title: "Law Firm Accounting & Trust Accounts",
-      shortDesc: "Specialized bookkeeping for law firms: trust account reconciliation, client matter mapping, and Clio bookkeeping support.",
+      shortDesc:
+        "Specialized bookkeeping for law firms: trust account reconciliation, client matter mapping, and Clio bookkeeping support.",
       deliverables: [
         "IOLTA/IOTA compliance management",
-        "Clio integration and support", 
+        "Clio integration and support",
         "Trust account reconciliation",
         "Client matter mapping",
         "Retainer accounting",
-        "Partner reporting"
+        "Partner reporting",
       ],
       ctaText: "Book Clio & Trust Accounting Consultation",
-      pricing: "Starting from $1,200/month"
+      pricing: "Starting from $1,200/month",
     },
     {
       icon: Briefcase,
       title: "White-Label & CPA Outsourcing",
-      shortDesc: "Deliver client work under your brand — dedicated resources, SLAs, and secure processes for CPA firms.",
+      shortDesc:
+        "Deliver client work under your brand — dedicated resources, SLAs, and secure processes for CPA firms.",
       deliverables: [
         "Dedicated offshore team members",
         "White-label service delivery",
         "Custom SLA agreements",
         "Secure process management",
         "Scalable team expansion",
-        "Quality assurance protocols"
+        "Quality assurance protocols",
       ],
-      ctaText: "Become a White-Label Partner", 
-      pricing: "Enterprise pricing available"
+      ctaText: "Become a White-Label Partner",
+      pricing: "Enterprise pricing available",
     },
     {
       icon: Globe,
       title: "Integrations & Automation",
-      shortDesc: "Set up connectors, automated feeds, and reconciliation rules to streamline bookkeeping and reduce errors.",
+      shortDesc:
+        "Set up connectors, automated feeds, and reconciliation rules to streamline bookkeeping and reduce errors.",
       deliverables: [
         "Software integration setup",
         "Automated data feeds",
         "Reconciliation rule creation",
         "Workflow automation",
         "Error reduction protocols",
-        "Monthly automation reports"
+        "Monthly automation reports",
       ],
       ctaText: "Automate My Accounting Stack",
-      pricing: "Setup fee + monthly maintenance"
-    }
+      pricing: "Setup fee + monthly maintenance",
+    },
   ];
 
   const industries = [
     {
       name: "Restaurants & Hospitality",
-      description: "Food cost tracking, payroll for hourly staff, POS integration, vendor payments, and tax-ready reporting."
+      description:
+        "Food cost tracking, payroll for hourly staff, POS integration, vendor payments, and tax-ready reporting.",
     },
     {
       name: "Retail",
-      description: "Multi-store bookkeeping, inventory tracking, POS reconciliation, AP/AR, and monthly reporting."
+      description:
+        "Multi-store bookkeeping, inventory tracking, POS reconciliation, AP/AR, and monthly reporting.",
     },
     {
-      name: "Law Firms & Service Providers", 
-      description: "Trust account (IOLTA/IOTA) management, Clio integration, retainer accounting, and partner reporting."
+      name: "Law Firms & Service Providers",
+      description:
+        "Trust account (IOLTA/IOTA) management, Clio integration, retainer accounting, and partner reporting.",
     },
     {
       name: "E-commerce & Online Stores",
-      description: "Shopify, Amazon, WooCommerce reconciliations, marketplace fees mapping, inventory, and COGS."
+      description:
+        "Shopify, Amazon, WooCommerce reconciliations, marketplace fees mapping, inventory, and COGS.",
     },
     {
       name: "Transportation & Logistics",
-      description: "Fleet management bookkeeping, driver payroll, fuel cost tracking, and monthly financial reporting."
+      description:
+        "Fleet management bookkeeping, driver payroll, fuel cost tracking, and monthly financial reporting.",
     },
     {
       name: "Healthcare & Pharmacy",
-      description: "Payroll for staff, insurance billing reconciliation, and accurate bookkeeping for compliance."
+      description:
+        "Payroll for staff, insurance billing reconciliation, and accurate bookkeeping for compliance.",
     },
     {
       name: "Manufacturing & Production",
-      description: "Inventory management, raw materials costing, production cost tracking, and financial statements."
+      description:
+        "Inventory management, raw materials costing, production cost tracking, and financial statements.",
     },
     {
-      name: "Insurance Agents & Brokers", 
-      description: "Commission tracking, AP/AR, monthly financial statements, and tax-ready reporting."
-    }
+      name: "Insurance Agents & Brokers",
+      description:
+        "Commission tracking, AP/AR, monthly financial statements, and tax-ready reporting.",
+    },
   ];
 
   const guarantees = [
     {
       icon: Clock,
       title: "24-48 Hour Response Time",
-      description: "All client queries answered within 2 business days maximum"
+      description: "All client queries answered within 2 business days maximum",
     },
     {
       icon: Award,
       title: "Monthly Deliverables",
-      description: "P&L, Balance Sheet, and Cash Flow delivered within 7-12 business days after month-end"
+      description:
+        "P&L, Balance Sheet, and Cash Flow delivered within 7-12 business days after month-end",
     },
     {
       icon: CheckCircle,
       title: "Quality Assurance",
-      description: "Double-review process with senior accountant oversight and exception reporting"
+      description:
+        "Double-review process with senior accountant oversight and exception reporting",
     },
     {
       icon: Shield,
       title: "Security & Compliance",
-      description: "Secure data storage, encrypted access, role-based permissions, and NDA protection"
-    }
+      description:
+        "Secure data storage, encrypted access, role-based permissions, and NDA protection",
+    },
   ];
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
+
       <main className="pt-20">
         {/* Hero Section */}
         <section className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-6 animate-fade-in">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
-                Professional 
-                <span className="bg-gradient-primary bg-clip-text text-transparent"> Accounting Services</span>
+                Professional
+                <span className="bg-gradient-primary bg-clip-text text-transparent">
+                  {" "}
+                  Accounting Services
+                </span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Comprehensive outsourced accounting, bookkeeping, payroll, and trust accounting services for US businesses, CPAs, and law firms. Accurate, tax-ready books delivered by certified professionals.
+                Comprehensive outsourced accounting, bookkeeping, payroll, and
+                trust accounting services for US businesses, CPAs, and law
+                firms. Accurate, tax-ready books delivered by certified
+                professionals.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="cta" size="xl">
@@ -231,7 +264,8 @@ const ServicesPage = () => {
                 </Button>
               </div>
               <Badge variant="outline" className="text-base px-4 py-2">
-                Serving US CPAs, law firms & businesses since 2019 — QuickBooks, Xero, Clio & ADP certified
+                Serving US CPAs, law firms & businesses since 2019 — QuickBooks,
+                Xero, Clio & ADP certified
               </Badge>
             </div>
           </div>
@@ -245,13 +279,19 @@ const ServicesPage = () => {
                 Our Services — Tailored for Your Success
               </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                End-to-end outsourced bookkeeping, payroll, taxation support, and specialized accounting services so you can focus on growth and compliance.
+                End-to-end outsourced bookkeeping, payroll, taxation support,
+                and specialized accounting services so you can focus on growth
+                and compliance.
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <Card key={service.title} className="hover-lift group cursor-pointer border-border/50 hover:border-primary/20 bg-card/50 backdrop-blur-sm h-full" style={{ animationDelay: `${index * 100}ms` }}>
+                <Card
+                  key={service.title}
+                  className="hover-lift group cursor-pointer border-border/50 hover:border-primary/20 bg-card/50 backdrop-blur-sm h-full"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <CardHeader className="space-y-4">
                     <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <service.icon className="w-6 h-6 text-primary-foreground" />
@@ -263,17 +303,22 @@ const ServicesPage = () => {
                       <CardDescription className="text-muted-foreground mb-4">
                         {service.shortDesc}
                       </CardDescription>
-                      <Badge variant="secondary" className="mb-4">
+                      {/* <Badge variant="secondary" className="mb-4">
                         {service.pricing}
-                      </Badge>
+                      </Badge> */}
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4">
                     <div>
-                      <h4 className="font-semibold mb-2 text-sm text-primary">Deliverables:</h4>
+                      <h4 className="font-semibold mb-2 text-sm text-primary">
+                        Deliverables:
+                      </h4>
                       <ul className="space-y-1">
                         {service.deliverables.map((deliverable, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
+                          <li
+                            key={idx}
+                            className="text-sm text-muted-foreground flex items-start gap-2"
+                          >
                             <ArrowRight className="w-3 h-3 text-success mt-0.5 flex-shrink-0" />
                             <span>{deliverable}</span>
                           </li>
@@ -294,15 +339,22 @@ const ServicesPage = () => {
         <section className="py-20 bg-gradient-section">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-bold">Industries We Specialize In</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold">
+                Industries We Specialize In
+              </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Tailored accounting solutions with industry-specific expertise and compliance knowledge
+                Tailored accounting solutions with industry-specific expertise
+                and compliance knowledge
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {industries.map((industry, index) => (
-                <Card key={industry.name} className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/20 hover-lift" style={{ animationDelay: `${index * 50}ms` }}>
+                <Card
+                  key={industry.name}
+                  className="bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/20 hover-lift"
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
                   <CardHeader>
                     <CardTitle className="text-lg">{industry.name}</CardTitle>
                     <CardDescription>{industry.description}</CardDescription>
@@ -323,20 +375,29 @@ const ServicesPage = () => {
         <section className="py-20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 space-y-4">
-              <h2 className="text-3xl sm:text-4xl font-bold">Our Commitment to Excellence</h2>
+              <h2 className="text-3xl sm:text-4xl font-bold">
+                Our Commitment to Excellence
+              </h2>
               <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                Quality assurance, security, and timely delivery you can count on
+                Quality assurance, security, and timely delivery you can count
+                on
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {guarantees.map((guarantee, index) => (
-                <div key={guarantee.title} className="text-center space-y-4" style={{ animationDelay: `${index * 100}ms` }}>
+                <div
+                  key={guarantee.title}
+                  className="text-center space-y-4"
+                  style={{ animationDelay: `${index * 100}ms` }}
+                >
                   <div className="w-16 h-16 rounded-full bg-gradient-primary flex items-center justify-center mx-auto">
                     <guarantee.icon className="w-8 h-8 text-primary-foreground" />
                   </div>
                   <h3 className="text-lg font-semibold">{guarantee.title}</h3>
-                  <p className="text-muted-foreground">{guarantee.description}</p>
+                  <p className="text-muted-foreground">
+                    {guarantee.description}
+                  </p>
                 </div>
               ))}
             </div>
@@ -350,7 +411,9 @@ const ServicesPage = () => {
               Ready to Streamline Your Accounting?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Our expert team is ready to take over your bookkeeping, payroll, and compliance needs so you can focus on growing your business. Get started with a free consultation.
+              Our expert team is ready to take over your bookkeeping, payroll,
+              and compliance needs so you can focus on growing your business.
+              Get started with a free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="cta" size="xl">
@@ -361,7 +424,8 @@ const ServicesPage = () => {
               </Button>
             </div>
             <p className="text-sm text-muted-foreground">
-              Starting from $500/month • Custom quotes for complex needs • 24-hour response guarantee
+              Starting from $500/month • Custom quotes for complex needs •
+              24-hour response guarantee
             </p>
           </div>
         </section>

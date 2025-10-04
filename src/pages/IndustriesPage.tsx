@@ -157,7 +157,7 @@ const IndustriesPage = () => {
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
               Customized solutions for US CPAs, law firms, small businesses, and online sellers. 
-              Accuracy, compliance, and efficiency — handled by our trained team in India.
+              Accuracy, compliance, and efficiency — handled by our trained team.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button size="lg" className="hover-scale">
