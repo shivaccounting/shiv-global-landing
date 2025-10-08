@@ -194,19 +194,26 @@ const Contact = () => {
                 </div>
               </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Email Address</label>
-                <Input type="email" placeholder="john@company.com" />
-              </div>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Email Address</label>
+                  <Input type="email" placeholder="john@company.com" />
+                </div>
 
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Phone Number</label>
-                <Input type="tel" placeholder="+1 (555) 123-4567" />
+                <div className="space-y-2">
+                  <label className="text-sm font-medium">Phone Number</label>
+                  <Input type="tel" placeholder="+1 (555) 123-4567" />
+                </div>
               </div>
 
               <div className="space-y-2">
                 <label className="text-sm font-medium">Business Type</label>
                 <Input placeholder="e.g., CPA Firm, Law Firm, E-commerce" />
+              </div>
+
+              <div className="space-y-2">
+                <label className="text-sm font-medium">Services</label>
+                <Input placeholder="e.g., Bookkeeping & Financial Reporting" />
               </div>
 
               <div className="space-y-2">
