@@ -1,4 +1,4 @@
-import founderImage from "@/assets/founder-portrait.jpg";
+import founderImage from "@/assets/founder-portrait.png";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Badge } from "@/components/ui/badge";

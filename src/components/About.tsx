@@ -1,4 +1,4 @@
-import founderImage from "@/assets/founder-portrait.jpg";
+import founderImage from "@/assets/founder-portrait.png";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
