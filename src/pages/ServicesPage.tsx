@@ -264,8 +264,7 @@ const ServicesPage = () => {
                 </Button>
               </div>
               <Badge variant="outline" className="text-base px-4 py-2">
-                Serving US CPAs, law firms & businesses since 2019 — QuickBooks,
-                Xero, Clio & ADP certified
+                Serving US CPAs, law firms & businesses since 2019
               </Badge>
             </div>
           </div>

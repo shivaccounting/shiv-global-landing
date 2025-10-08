@@ -38,15 +38,15 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm">
                 <Mail className="w-4 h-4" />
-                <span>info@shivaccounting.com</span>
+                <span>kailash@shivaccounting.com</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Phone className="w-4 h-4" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 83067 44700</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <MapPin className="w-4 h-4" />
-                <span>New Delhi, India</span>
+                <span>Porbandar, Gujarat, India</span>
               </div>
             </div>
           </div>
@@ -128,11 +128,11 @@ const Footer = () => {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-primary-foreground/80">
-              © 2024 Shiv Accounting and Business Services. All rights reserved.
+              © 2025 Shiv Accounting and Business Services. All rights reserved.
             </div>
 
             <div className="flex gap-6 text-sm">
-              <a
+              {/* <a
                 href="#"
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
@@ -149,7 +149,7 @@ const Footer = () => {
                 className="text-primary-foreground/80 hover:text-primary-foreground transition-colors"
               >
                 Cookie Policy
-              </a>
+              </a> */}
             </div>
           </div>
         </div>
