@@ -3,17 +3,6 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
-// Import logos
-import quickbooksLogo from "@/assets/logos/pngwing.com (10).png";
-import xeroLogo from "@/assets/logos/Xero_(software)-Logo.wine.png";
-import clioLogo from "@/assets/logos/clio-logo.svg";
-import adpLogo from "@/assets/logos/pngwing.com (13).png";
-import gustoLogo from "@/assets/logos/Gusto_logo_f45d48.png";
-import shopifyLogo from "@/assets/logos/shopify_logo_black.png";
-import asanaLogo from "@/assets/logos/Asana.png";
-import dextLogo from "@/assets/logos/Dext (1).png";
-import zohoLogo from "@/assets/logos/Zoho_Office_Suite-Logo.wine.png";
-
 const Hero = () => {
   return (
     <section
@@ -74,45 +63,7 @@ const Hero = () => {
               </Link>
             </div>
 
-            {/* Integration badges */}
-            <div className="pt-8">
-              <p className="text-sm text-muted-foreground mb-4 font-semibold">
-                "Trusted by CPAs, Bookkeepers, Law Firms, and Small Businesses
-                Nationwide"
-              </p>
-              <div className="relative overflow-hidden">
-                <div className="flex gap-8 items-center animate-scroll">
-                  {[
-                    { src: quickbooksLogo, alt: "QuickBooks" },
-                    { src: xeroLogo, alt: "Xero" },
-                    { src: clioLogo, alt: "Clio" },
-                    { src: adpLogo, alt: "ADP" },
-                    { src: gustoLogo, alt: "Gusto" },
-                    { src: shopifyLogo, alt: "Shopify" },
-                    { src: asanaLogo, alt: "Asana" },
-                    { src: dextLogo, alt: "Dext" },
-                    { src: zohoLogo, alt: "Zoho" },
-                  ].concat([
-                    { src: quickbooksLogo, alt: "QuickBooks" },
-                    { src: xeroLogo, alt: "Xero" },
-                    { src: clioLogo, alt: "Clio" },
-                    { src: adpLogo, alt: "ADP" },
-                    { src: gustoLogo, alt: "Gusto" },
-                    { src: shopifyLogo, alt: "Shopify" },
-                    { src: asanaLogo, alt: "Asana" },
-                    { src: dextLogo, alt: "Dext" },
-                    { src: zohoLogo, alt: "Zoho" },
-                  ]).map((logo, index) => (
-                    <img
-                      key={index}
-                      src={logo.src}
-                      alt={logo.alt}
-                      className="h-8 w-auto object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all flex-shrink-0"
-                    />
-                  ))}
-                </div>
-              </div>
-            </div>
+        
           </div>
 
           {/* Hero Image */}

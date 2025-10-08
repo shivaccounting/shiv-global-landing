@@ -35,7 +35,7 @@ const Header = () => {
                 key={item.name}
                 to={item.href}
                 className={`text-foreground hover:text-primary transition-colors duration-200 font-medium ${
-                  location.pathname === item.href ? 'text-primary' : ''
+                  location.pathname === item.href ? "text-primary" : ""
                 }`}
               >
                 {item.name}
@@ -68,7 +68,7 @@ const Header = () => {
                   key={item.name}
                   to={item.href}
                   className={`text-foreground hover:text-primary transition-colors duration-200 font-medium py-2 ${
-                    location.pathname === item.href ? 'text-primary' : ''
+                    location.pathname === item.href ? "text-primary" : ""
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -76,7 +76,9 @@ const Header = () => {
                 </Link>
               ))}
               <Button variant="cta" size="lg" className="w-full">
-                Get Free Consultation
+                <Link to={"/contact"} state={{ scrollTo: "form" }}>
+                  Get Free Consultation
+                </Link>
               </Button>
             </div>
           </div>
