@@ -12,7 +12,7 @@ const Header = () => {
     { name: "Services", href: "/services" },
     { name: "Industries", href: "/industries" },
     { name: "About Us", href: "/about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Contact", href: "/contact" },
   ];
 
   return (
@@ -31,25 +31,15 @@ const Header = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigation.map((item) => (
-              item.href.startsWith('#') ? (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-foreground hover:text-primary transition-colors duration-200 font-medium"
-                >
-                  {item.name}
-                </a>
-              ) : (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className={`text-foreground hover:text-primary transition-colors duration-200 font-medium ${
-                    location.pathname === item.href ? 'text-primary' : ''
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              )
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`text-foreground hover:text-primary transition-colors duration-200 font-medium ${
+                  location.pathname === item.href ? 'text-primary' : ''
+                }`}
+              >
+                {item.name}
+              </Link>
             ))}
             <Button variant="cta" size="lg">
               Get Free Consultation
@@ -74,27 +64,16 @@ const Header = () => {
           <div className="md:hidden py-4 border-t border-border animate-fade-in">
             <div className="flex flex-col space-y-4">
               {navigation.map((item) => (
-                item.href.startsWith('#') ? (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="text-foreground hover:text-primary transition-colors duration-200 font-medium py-2"
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </a>
-                ) : (
-                  <Link
-                    key={item.name}
-                    to={item.href}
-                    className={`text-foreground hover:text-primary transition-colors duration-200 font-medium py-2 ${
-                      location.pathname === item.href ? 'text-primary' : ''
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                )
+                <Link
+                  key={item.name}
+                  to={item.href}
+                  className={`text-foreground hover:text-primary transition-colors duration-200 font-medium py-2 ${
+                    location.pathname === item.href ? 'text-primary' : ''
+                  }`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
               ))}
               <Button variant="cta" size="lg" className="w-full">
                 Get Free Consultation
