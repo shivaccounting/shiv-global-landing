@@ -17,6 +17,7 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AboutUsPage = () => {
   const stats = [
@@ -152,12 +153,19 @@ const AboutUsPage = () => {
                 standards.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="hero" size="xl">
-                  Request a Consultation
-                </Button>
-                <Button variant="outline" size="xl">
-                  See Our Services
-                </Button>
+                <Link
+                  to={"https://calendly.com/kailash-shivaccounting/new-meeting"}
+                  target="_blank"
+                >
+                  <Button variant="hero" size="xl">
+                    Request a Consultation
+                  </Button>
+                </Link>
+                <Link to={"/services"} state={{ scrollTo: "form" }}>
+                  <Button variant="outline" size="xl">
+                    See Our Services
+                  </Button>
+                </Link>
               </div>
               <p className="text-sm text-muted-foreground">
                 Serving US clients since 2019 — QuickBooks, Xero, Clio, ADP,
@@ -394,10 +402,12 @@ const AboutUsPage = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Button variant="cta" size="xl">
-                Start Your Accounting Setup{" "}
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              <Link to={"/contact"} state={{ scrollTo: "form" }}>
+                <Button variant="cta" size="xl">
+                  Start Your Accounting Setup{" "}
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
@@ -436,7 +446,7 @@ const AboutUsPage = () => {
         </section>
 
         {/* Client Testimonials */}
-        <section className="py-20 bg-gradient-subtle">
+        {/* <section className="py-20 bg-gradient-subtle">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl sm:text-4xl font-bold mb-4">
@@ -483,7 +493,7 @@ const AboutUsPage = () => {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA Section */}
         <section className="py-20 bg-gradient-primary text-primary-foreground">
@@ -497,12 +507,17 @@ const AboutUsPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="secondary" size="xl">
-                Schedule Free Consultation
+                <Link
+                  to={"https://calendly.com/kailash-shivaccounting/new-meeting"}
+                  target="_blank"
+                >
+                  Schedule Free Consultation
+                </Link>
               </Button>
               <Button
                 variant="outline"
                 size="xl"
-                className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary"
+                className="border-primary-foreground text-primary hover:bg-primary-foreground hover:text-primary"
               >
                 Download Our Brochure
               </Button>

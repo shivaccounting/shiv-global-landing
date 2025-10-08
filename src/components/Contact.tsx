@@ -12,8 +12,18 @@ import {
   MapPin,
   Phone,
 } from "lucide-react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const Contact = () => {
+  const { state } = useLocation();
+
+  useEffect(() => {
+    if (state?.scrollTo) {
+      const el = document.getElementById(state.scrollTo);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [state]);
   const contactInfo = [
     {
       icon: Phone,
@@ -160,6 +170,11 @@ const Contact = () => {
                   </ul>
 
                   <Button
+                    onClick={() =>
+                      document
+                        .getElementById("form")
+                        .scrollIntoView({ behavior: "smooth" })
+                    }
                     variant={plan.popular ? "cta" : "professional"}
                     size="lg"
                     className="w-full"
@@ -173,7 +188,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Form & Info */}
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-16" id="form">
           {/* Contact Form */}
           <Card className="hover-lift border-border/50 bg-card/50 backdrop-blur-sm">
             <CardHeader>

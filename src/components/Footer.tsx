@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Facebook, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const services = [
@@ -93,7 +94,12 @@ const Footer = () => {
               today.
             </p>
             <Button variant="secondary" size="lg" className="w-full">
-              Free Consultation
+              <Link
+                to={"https://calendly.com/kailash-shivaccounting/new-meeting"}
+                target="_blank"
+              >
+                Free Consultation
+              </Link>
             </Button>
 
             {/* Social Links */}

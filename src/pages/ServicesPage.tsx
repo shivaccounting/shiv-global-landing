@@ -23,6 +23,7 @@ import {
   Users,
 } from "lucide-react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const ServicesPage = () => {
   useEffect(() => {
@@ -257,10 +258,19 @@ const ServicesPage = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="cta" size="xl">
-                  Schedule Free Consultation
+                  <Link
+                    to={
+                      "https://calendly.com/kailash-shivaccounting/new-meeting"
+                    }
+                    target="_blank"
+                  >
+                    Schedule Free Consultation
+                  </Link>
                 </Button>
                 <Button variant="professional" size="xl">
-                  Request Custom Quote
+                  <Link to={"/contact"} state={{ scrollTo: "form" }}>
+                    Request Custom Quote
+                  </Link>
                 </Button>
               </div>
               <Badge variant="outline" className="text-base px-4 py-2">
@@ -325,7 +335,9 @@ const ServicesPage = () => {
                       </ul>
                     </div>
                     <Button variant="outline" className="w-full mt-auto">
-                      {service.ctaText}
+                      <Link to={"/contact"} state={{ scrollTo: "form" }}>
+                        {service.ctaText}
+                      </Link>
                     </Button>
                   </CardContent>
                 </Card>
@@ -364,7 +376,9 @@ const ServicesPage = () => {
 
             <div className="text-center mt-12">
               <Button variant="cta" size="xl">
-                Find Out How We Can Support Your Industry
+                <Link to={"/contact"} state={{ scrollTo: "form" }}>
+                  Find Out How We Can Support Your Industry
+                </Link>
               </Button>
             </div>
           </div>
@@ -416,10 +430,17 @@ const ServicesPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="cta" size="xl">
-                Schedule Free Consultation
+                <Link
+                  to={"https://calendly.com/kailash-shivaccounting/new-meeting"}
+                  target="_blank"
+                >
+                  Schedule Free Consultation
+                </Link>
               </Button>
               <Button variant="professional" size="xl">
-                Request Custom Quote
+                <Link to={"/contact"} state={{ scrollTo: "form" }}>
+                  Request Custom Quote
+                </Link>
               </Button>
             </div>
             <p className="text-sm text-muted-foreground">

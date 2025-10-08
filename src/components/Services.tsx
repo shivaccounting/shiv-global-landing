@@ -16,6 +16,7 @@ import {
   ShoppingCart,
   Users,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Services = () => {
   const services = [
@@ -168,12 +169,16 @@ const Services = () => {
                 and compliance needs so you can focus on growing your business.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="cta" size="xl">
-                  View All Services
-                </Button>
-                <Button variant="professional" size="xl">
-                  Get Custom Quote
-                </Button>
+                <Link to={"/services"}>
+                  <Button variant="cta" size="xl">
+                    View All Services
+                  </Button>
+                </Link>
+                <Link to={"/contact"} state={{ scrollTo: "form" }}>
+                  <Button variant="professional" size="xl">
+                    Get Custom Quote
+                  </Button>
+                </Link>
               </div>
             </div>
             <div className="relative">
