@@ -16,7 +16,7 @@ const logos = [
   { src: adpLogo, alt: "ADP" },
   { src: gustoLogo, alt: "Gusto" },
   { src: shopifyLogo, alt: "Shopify" },
-  { src: asanaLogo, alt: "Asana" },
+  // { src: asanaLogo, alt: "Asana" },
   { src: dextLogo, alt: "Dext" },
   { src: zohoLogo, alt: "Zoho" },
 ];

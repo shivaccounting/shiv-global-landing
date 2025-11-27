@@ -1,17 +1,8 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import {
-  ArrowRight,
-  Calculator,
-  CheckCircle,
-  Clock,
-  Mail,
-  MapPin,
-  Phone,
-} from "lucide-react";
+
+import { CheckCircle, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -111,67 +102,20 @@ const Contact = () => {
         {/* Contact Form & Info */}
         <div className="grid lg:grid-cols-2 gap-16 mb-20" id="form">
           {/* Contact Form */}
-          <Card className="hover-lift border-border/50 bg-card/50 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-3 text-2xl">
-                <Calculator className="w-6 h-6 text-primary" />
-                Get Your Free Consultation
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">First Name</label>
-                  <Input placeholder="John" />
-                </div>
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Last Name</label>
-                  <Input placeholder="Doe" />
-                </div>
-              </div>
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Email Address</label>
-                  <Input type="email" placeholder="john@company.com" />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Phone Number</label>
-                  <Input type="tel" placeholder="+1 (555) 123-4567" />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Business Type</label>
-                <Input placeholder="e.g., CPA Firm, Law Firm, E-commerce" />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium">Services</label>
-                <Input placeholder="e.g., Bookkeeping & Financial Reporting" />
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-sm font-medium">
-                  How can we help you?
-                </label>
-                <Textarea
-                  placeholder="Tell us about your accounting needs, current challenges, or questions..."
-                  rows={4}
-                />
-              </div>
-
-              <Button variant="cta" size="xl" className="w-full group">
-                Schedule Free Consultation
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-
-              <p className="text-xs text-muted-foreground text-center">
-                No commitment required. We'll respond within 24 hours.
-              </p>
-            </CardContent>
-          </Card>
+          <div className="w-full min-h-[800px] bg-card/50 rounded-xl border border-border/50 overflow-hidden">
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLScQ2CKaTjoA1tRITMSZBgsda7tLSsJZxvwUaO3s5gK9N6tDZQ/viewform?usp=sharing&ouid=111372871625306707850"
+              width="100%"
+              height="100%"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
+              className="w-full h-full"
+              title="Contact Form"
+            >
+              Loading…
+            </iframe>
+          </div>
 
           {/* Contact Info */}
           <div className="space-y-8">
