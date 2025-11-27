@@ -108,87 +108,8 @@ const Contact = () => {
           </p>
         </div>
 
-        {/* Pricing Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-              Affordable & Scalable Plans
-            </h3>
-            <p className="text-muted-foreground">
-              Every business is unique — that's why our pricing is tailored to
-              your needs.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {pricingPlans.map((plan, index) => (
-              <Card
-                key={plan.name}
-                className={`relative hover-lift ${
-                  plan.popular
-                    ? "border-accent shadow-glow bg-gradient-accent/5"
-                    : "border-border/50 bg-card/50"
-                } backdrop-blur-sm`}
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <Badge
-                      variant="secondary"
-                      className="bg-accent text-accent-foreground"
-                    >
-                      Most Popular
-                    </Badge>
-                  </div>
-                )}
-
-                <CardHeader className="text-center pb-8">
-                  <CardTitle className="text-xl mb-4">{plan.name}</CardTitle>
-                  <div className="space-y-1">
-                    <div className="text-3xl font-bold">
-                      {plan.price}
-                      <span className="text-sm text-muted-foreground font-normal">
-                        {plan.period}
-                      </span>
-                    </div>
-                    {plan.name === "Bookkeeping Services" && (
-                      <p className="text-sm text-muted-foreground">
-                        Starting from
-                      </p>
-                    )}
-                  </div>
-                </CardHeader>
-
-                <CardContent className="space-y-6">
-                  <ul className="space-y-3">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  <Button
-                    onClick={() =>
-                      document
-                        .getElementById("form")
-                        .scrollIntoView({ behavior: "smooth" })
-                    }
-                    variant={plan.popular ? "cta" : "professional"}
-                    size="lg"
-                    className="w-full"
-                  >
-                    {plan.price === "Custom" ? "Contact Us" : "Get Started"}
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-
         {/* Contact Form & Info */}
-        <div className="grid lg:grid-cols-2 gap-16" id="form">
+        <div className="grid lg:grid-cols-2 gap-16 mb-20" id="form">
           {/* Contact Form */}
           <Card className="hover-lift border-border/50 bg-card/50 backdrop-blur-sm">
             <CardHeader>
@@ -305,6 +226,85 @@ const Contact = () => {
                 </ul>
               </CardContent>
             </Card>
+          </div>
+        </div>
+
+        {/* Pricing Section */}
+        <div className="">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold mb-4">
+              Affordable & Scalable Plans
+            </h3>
+            <p className="text-muted-foreground">
+              Every business is unique — that's why our pricing is tailored to
+              your needs.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {pricingPlans.map((plan, index) => (
+              <Card
+                key={plan.name}
+                className={`relative hover-lift ${
+                  plan.popular
+                    ? "border-accent shadow-glow bg-gradient-accent/5"
+                    : "border-border/50 bg-card/50"
+                } backdrop-blur-sm`}
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {plan.popular && (
+                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <Badge
+                      variant="secondary"
+                      className="bg-accent text-accent-foreground"
+                    >
+                      Most Popular
+                    </Badge>
+                  </div>
+                )}
+
+                <CardHeader className="text-center pb-8">
+                  <CardTitle className="text-xl mb-4">{plan.name}</CardTitle>
+                  <div className="space-y-1">
+                    <div className="text-3xl font-bold">
+                      {plan.price}
+                      <span className="text-sm text-muted-foreground font-normal">
+                        {plan.period}
+                      </span>
+                    </div>
+                    {plan.name === "Bookkeeping Services" && (
+                      <p className="text-sm text-muted-foreground">
+                        Starting from
+                      </p>
+                    )}
+                  </div>
+                </CardHeader>
+
+                <CardContent className="space-y-6">
+                  <ul className="space-y-3">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3">
+                        <CheckCircle className="w-5 h-5 text-success mt-0.5 flex-shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Button
+                    onClick={() =>
+                      document
+                        .getElementById("form")
+                        .scrollIntoView({ behavior: "smooth" })
+                    }
+                    variant={plan.popular ? "cta" : "professional"}
+                    size="lg"
+                    className="w-full"
+                  >
+                    {plan.price === "Custom" ? "Contact Us" : "Get Started"}
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </div>

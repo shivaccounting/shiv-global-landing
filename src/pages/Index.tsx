@@ -15,13 +15,13 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <Services />
-        <Suspense fallback={null}>
+        <Suspense fallback={<></>}>
           <Logo />
         </Suspense>
+        <Services />
         <About />
         {/* <Testimonials /> */}
-        <Contact />
+        {/* <Contact /> */}
       </main>
       <Footer />
     </div>

@@ -21,6 +21,7 @@ import {
   UtensilsCrossed,
 } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
+import industriesHeroBg from "@/assets/industries-hero-bg.png";
 
 const IndustriesPage = () => {
   const navigate = useNavigate();
@@ -161,8 +162,12 @@ const IndustriesPage = () => {
       <Header />
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="py-20 px-4 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5">
-          <div className="max-w-7xl mx-auto text-center">
+        <section
+          className="relative py-20 px-4 bg-cover bg-center min-h-screen flex items-center"
+          style={{ backgroundImage: `url(${industriesHeroBg})` }}
+        >
+          <div className="absolute inset-0 bg-white/[0.1] sm:bg-white/[0.1] sm:bg-gradient-to-r sm:from-white/[0.1] sm:to-white/10" />
+          <div className="max-w-7xl relative z-10 mx-auto text-center">
             <Badge variant="outline" className="mb-6">
               Industry Expertise
             </Badge>
@@ -174,22 +179,7 @@ const IndustriesPage = () => {
               online sellers. Accuracy, compliance, and efficiency — handled by
               our trained team.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="hover-scale">
-                <Link
-                  to={"https://calendly.com/kailash-shivaccounting/new-meeting"}
-                  target="_blank"
-                >
-                  Request a Free Consultation
-                </Link>
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="lg" className="hover-scale">
-                <Link to={"/contact"} state={{ scrollTo: "form" }}>
-                  Get a Custom Quote
-                </Link>
-              </Button>
-            </div>
+
             <p className="text-sm text-muted-foreground mt-6">
               Serving US businesses since 2019 — QuickBooks, Xero, Clio, ADP,
               and industry-specific expertise.

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,9 +23,11 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/">
-              <h1 className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent hover:opacity-80 transition-opacity">
-                Shiv Accounting
-              </h1>
+              <img
+                src={logo}
+                alt="shiv accounting"
+                className="h-12 w-auto object-contain"
+              />
             </Link>
           </div>
 
@@ -42,7 +45,9 @@ const Header = () => {
               </Link>
             ))}
             <Button variant="cta" size="lg">
-              Get Free Consultation
+              <Link to={"/contact"} state={{ scrollTo: "form" }}>
+                Get Free Consultation
+              </Link>
             </Button>
           </div>
 

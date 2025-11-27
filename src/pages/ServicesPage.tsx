@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import servicesHeroBg from "@/assets/services-hero-bg.png";
 
 const ServicesPage = () => {
   useEffect(() => {
@@ -240,8 +241,12 @@ const ServicesPage = () => {
 
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-section">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="relative py-20 bg-cover bg-center min-h-screen flex items-center"
+          style={{ backgroundImage: `url(${servicesHeroBg})` }}
+        >
+          <div className="absolute inset-0 bg-white/[0.1] sm:bg-white/[0.1] sm:bg-gradient-to-r sm:from-white/[0.1] sm:to-white/10" />
+          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-6 animate-fade-in">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
                 Professional
@@ -256,23 +261,7 @@ const ServicesPage = () => {
                 firms. Accurate, tax-ready books delivered by certified
                 professionals.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="cta" size="xl">
-                  <Link
-                    to={
-                      "https://calendly.com/kailash-shivaccounting/new-meeting"
-                    }
-                    target="_blank"
-                  >
-                    Schedule Free Consultation
-                  </Link>
-                </Button>
-                <Button variant="professional" size="xl">
-                  <Link to={"/contact"} state={{ scrollTo: "form" }}>
-                    Request Custom Quote
-                  </Link>
-                </Button>
-              </div>
+
               <Badge variant="outline" className="text-base px-4 py-2">
                 Serving US CPAs, law firms & businesses since 2019
               </Badge>
@@ -376,7 +365,7 @@ const ServicesPage = () => {
 
             <div className="text-center mt-12">
               <Button variant="cta" size="xl">
-                <Link to={"/contact"} state={{ scrollTo: "form" }}>
+                <Link to={"/industries"}>
                   Find Out How We Can Support Your Industry
                 </Link>
               </Button>

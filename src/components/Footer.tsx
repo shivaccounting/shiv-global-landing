@@ -94,10 +94,7 @@ const Footer = () => {
               today.
             </p>
             <Button variant="secondary" size="lg" className="w-full">
-              <Link
-                to={"https://calendly.com/kailash-shivaccounting/new-meeting"}
-                target="_blank"
-              >
+              <Link to={"/contact"} state={{ scrollTo: "form" }}>
                 Free Consultation
               </Link>
             </Button>

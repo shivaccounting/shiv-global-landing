@@ -47,10 +47,7 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                to={"https://calendly.com/kailash-shivaccounting/new-meeting"}
-                target="_blank"
-              >
+              <Link to={"/contact"} state={{ scrollTo: "form" }}>
                 <Button variant="hero" size="xl" className="group">
                   Schedule a Free Consultation
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -62,8 +59,6 @@ const Hero = () => {
                 </Button>
               </Link>
             </div>
-
-        
           </div>
 
           {/* Hero Image */}

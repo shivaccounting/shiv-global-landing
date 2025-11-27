@@ -9,9 +9,18 @@ import shopifyLogo from "@/assets/logos/shopify_logo_black.png";
 import xeroLogo from "@/assets/logos/Xero_(software)-Logo.wine.png";
 import zohoLogo from "@/assets/logos/Zoho_Office_Suite-Logo.wine.png";
 
-{
-  /* Integration badges */
-}
+const logos = [
+  { src: quickbooksLogo, alt: "QuickBooks" },
+  { src: xeroLogo, alt: "Xero" },
+  { src: clioLogo, alt: "Clio" },
+  { src: adpLogo, alt: "ADP" },
+  { src: gustoLogo, alt: "Gusto" },
+  { src: shopifyLogo, alt: "Shopify" },
+  { src: asanaLogo, alt: "Asana" },
+  { src: dextLogo, alt: "Dext" },
+  { src: zohoLogo, alt: "Zoho" },
+];
+
 const Logo = () => {
   return (
     <section id="services" className="pb-20 bg-gradient-section">
@@ -26,36 +35,14 @@ const Logo = () => {
             </div>
             <div className="relative mt-6 overflow-hidden">
               <div className="flex gap-8 items-center animate-scroll">
-                {[
-                  { src: quickbooksLogo, alt: "QuickBooks" },
-                  { src: xeroLogo, alt: "Xero" },
-                  { src: clioLogo, alt: "Clio" },
-                  { src: adpLogo, alt: "ADP" },
-                  { src: gustoLogo, alt: "Gusto" },
-                  { src: shopifyLogo, alt: "Shopify" },
-                  { src: asanaLogo, alt: "Asana" },
-                  { src: dextLogo, alt: "Dext" },
-                  { src: zohoLogo, alt: "Zoho" },
-                ]
-                  .concat([
-                    { src: quickbooksLogo, alt: "QuickBooks" },
-                    { src: xeroLogo, alt: "Xero" },
-                    { src: clioLogo, alt: "Clio" },
-                    { src: adpLogo, alt: "ADP" },
-                    { src: gustoLogo, alt: "Gusto" },
-                    { src: shopifyLogo, alt: "Shopify" },
-                    { src: asanaLogo, alt: "Asana" },
-                    { src: dextLogo, alt: "Dext" },
-                    { src: zohoLogo, alt: "Zoho" },
-                  ])
-                  .map((logo, index) => (
-                    <img
-                      key={index}
-                      src={logo.src}
-                      alt={logo.alt}
-                      className="h-8 w-auto object-contain opacity-60 grayscale hover:grayscale-0 hover:opacity-100 transition-all flex-shrink-0"
-                    />
-                  ))}
+                {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
+                  <img
+                    key={index}
+                    src={logo.src}
+                    alt={logo.alt}
+                    className="h-16 w-auto object-contain transition-all flex-shrink-0"
+                  />
+                ))}
               </div>
             </div>
           </div>

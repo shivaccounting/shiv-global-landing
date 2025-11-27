@@ -1,4 +1,5 @@
 import founderImage from "@/assets/founder-portrait.png";
+import aboutHeroBg from "@/assets/about-hero-bg.png";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
@@ -135,10 +136,14 @@ const AboutUsPage = () => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <main className="pt-24">
+      <main className="pt-20">
         {/* Hero Section */}
-        <section className="py-20 bg-gradient-subtle">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <section
+          className="relative py-20 bg-cover bg-center min-h-screen flex items-center"
+          style={{ backgroundImage: `url(${aboutHeroBg})` }}
+        >
+          <div className="absolute inset-0 bg-white/[0.1] sm:bg-white/[0.1] sm:bg-gradient-to-r sm:from-white/[0.1] sm:to-white/10" />
+          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 space-y-6 animate-fade-in">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
                 Trusted Accounting &
@@ -152,21 +157,7 @@ const AboutUsPage = () => {
                 law firms, and small businesses — offshore expertise with US
                 standards.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  to={"https://calendly.com/kailash-shivaccounting/new-meeting"}
-                  target="_blank"
-                >
-                  <Button variant="hero" size="xl">
-                    Request a Consultation
-                  </Button>
-                </Link>
-                <Link to={"/services"} state={{ scrollTo: "form" }}>
-                  <Button variant="outline" size="xl">
-                    See Our Services
-                  </Button>
-                </Link>
-              </div>
+
               <p className="text-sm text-muted-foreground">
                 Serving US clients since 2019 — QuickBooks, Xero, Clio, ADP,
                 Gusto, Shopify, Amazon, and more.
