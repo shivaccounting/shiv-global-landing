@@ -10,15 +10,15 @@ import xeroLogo from "@/assets/logos/Xero_(software)-Logo.wine.png";
 import zohoLogo from "@/assets/logos/Zoho_Office_Suite-Logo.wine.png";
 
 const logos = [
-  { src: quickbooksLogo, alt: "QuickBooks" },
-  { src: xeroLogo, alt: "Xero" },
-  { src: clioLogo, alt: "Clio" },
-  { src: adpLogo, alt: "ADP" },
-  { src: gustoLogo, alt: "Gusto" },
-  { src: shopifyLogo, alt: "Shopify" },
-  // { src: asanaLogo, alt: "Asana" },
-  { src: dextLogo, alt: "Dext" },
-  { src: zohoLogo, alt: "Zoho" },
+  { src: quickbooksLogo.src, alt: "QuickBooks" },
+  { src: xeroLogo.src, alt: "Xero" },
+  { src: clioLogo.src, alt: "Clio" },
+  { src: adpLogo.src, alt: "ADP" },
+  { src: gustoLogo.src, alt: "Gusto" },
+  { src: shopifyLogo.src, alt: "Shopify" },
+  // { src: asanaLogo.src, alt: "Asana" },
+  { src: dextLogo.src, alt: "Dext" },
+  { src: zohoLogo.src, alt: "Zoho" },
 ];
 
 const Logo = () => {

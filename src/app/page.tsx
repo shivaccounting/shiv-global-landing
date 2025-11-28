@@ -1,13 +1,18 @@
+"use client";
+
 import About from "@/components/About";
-import Contact from "@/components/Contact";
+// import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Services from "@/components/Services";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
-import { lazy, Suspense } from "react";
-
-const Logo = lazy(() => import("@/components/Logo"));
+const Logo = dynamic(() => import("@/components/Logo"), {
+  loading: () => <></>,
+  ssr: false,
+});
 
 const Index = () => {
   return (
@@ -15,9 +20,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <Suspense fallback={<></>}>
-          <Logo />
-        </Suspense>
+        <Logo />
         <Services />
         <About />
         {/* <Testimonials /> */}

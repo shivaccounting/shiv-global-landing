@@ -1,20 +1,23 @@
+"use client";
+
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 import { CheckCircle, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useSearchParams } from "next/navigation";
 
 const Contact = () => {
-  const { state } = useLocation();
+  const searchParams = useSearchParams();
+  const scrollTo = searchParams.get("scrollTo");
 
   useEffect(() => {
-    if (state?.scrollTo) {
-      const el = document.getElementById(state.scrollTo);
+    if (scrollTo) {
+      const el = document.getElementById(scrollTo);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     }
-  }, [state]);
+  }, [scrollTo]);
   const contactInfo = [
     {
       icon: Phone,
@@ -24,7 +27,7 @@ const Contact = () => {
     {
       icon: Mail,
       title: "Email",
-      details: ["kailash@shivaccounting.com"],
+      details: ["info@shivaccounting.com"],
     },
     {
       icon: MapPin,
@@ -238,7 +241,7 @@ const Contact = () => {
                     onClick={() =>
                       document
                         .getElementById("form")
-                        .scrollIntoView({ behavior: "smooth" })
+                        ?.scrollIntoView({ behavior: "smooth" })
                     }
                     variant={plan.popular ? "cta" : "professional"}
                     size="lg"

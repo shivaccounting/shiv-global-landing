@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Globe, TrendingUp, Users } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const About = () => {
   const stats = [
@@ -97,8 +97,8 @@ const About = () => {
                 ))}
               </div>
             </div>
-            <Button variant="professional" size="xl">
-              <Link to={"about"}>Learn More About Us</Link>
+            <Button variant="professional" size="xl" asChild>
+              <Link href="/about">Learn More About Us</Link>
             </Button>
           </div>
 
@@ -108,7 +108,7 @@ const About = () => {
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="flex-shrink-0">
                   <img
-                    src={founderImage}
+                    src={founderImage.src}
                     alt="Kailash, Founder of Shiv Accounting and Business Services"
                     className="w-24 h-24 rounded-full object-cover shadow-professional"
                   />

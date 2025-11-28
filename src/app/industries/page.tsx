@@ -1,3 +1,5 @@
+"use client";
+
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
@@ -20,11 +22,12 @@ import {
   Truck,
   UtensilsCrossed,
 } from "lucide-react";
-import { Link, useNavigate } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 import industriesHeroBg from "@/assets/industries-hero-bg.png";
 
 const IndustriesPage = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const industries = [
     {
       id: "restaurants",
@@ -149,22 +152,12 @@ const IndustriesPage = () => {
 
   return (
     <>
-      <title>Industries We Serve - Shiv Accounting Services</title>
-      <meta
-        name="description"
-        content="Specialized accounting and bookkeeping services for restaurants, retail, law firms, e-commerce, transportation, healthcare, and manufacturing industries."
-      />
-      <meta
-        name="keywords"
-        content="industry accounting, restaurant bookkeeping, retail accounting, law firm accounting, e-commerce bookkeeping, transportation accounting, healthcare accounting, manufacturing accounting"
-      />
-
       <Header />
       <main className="min-h-screen bg-background">
         {/* Hero Section */}
         <section
           className="relative py-20 px-4 bg-cover bg-center min-h-screen flex items-center"
-          style={{ backgroundImage: `url(${industriesHeroBg})` }}
+          style={{ backgroundImage: `url(${industriesHeroBg.src})` }}
         >
           <div className="absolute inset-0 bg-white/[0.1] sm:bg-white/[0.1] sm:bg-gradient-to-r sm:from-white/[0.1] sm:to-white/10" />
           <div className="max-w-7xl relative z-10 mx-auto text-center">
@@ -257,9 +250,7 @@ const IndustriesPage = () => {
                       </div>
 
                       <Button
-                        onClick={() =>
-                          navigate("/contact", { state: { scrollTo: "form" } })
-                        }
+                        onClick={() => router.push("/contact?scrollTo=form")}
                         className="w-full hover-scale"
                         variant="outline"
                       >
@@ -286,7 +277,7 @@ const IndustriesPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                to={"https://calendly.com/kailash-shivaccounting/new-meeting"}
+                href="https://calendly.com/kailash-shivaccounting/new-meeting"
                 target="_blank"
               >
                 <Button size="lg" className="hover-scale">
@@ -294,7 +285,7 @@ const IndustriesPage = () => {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
-              <Link to={"/services"}>
+              <Link href="/services">
                 <Button variant="outline" size="lg" className="hover-scale">
                   View All Services
                 </Button>

@@ -18,7 +18,14 @@ import {
   TrendingUp,
   Users,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About Shiv Accounting | Trusted Bookkeeping & Accounting Experts",
+  description:
+    "Learn about Shiv Accounting's journey, mission, and team. We provide expert outsourced accounting services to US businesses, CPAs, and law firms.",
+};
 
 const AboutUsPage = () => {
   const stats = [
@@ -117,21 +124,6 @@ const AboutUsPage = () => {
     },
   ];
 
-  const testimonials = [
-    {
-      quote:
-        "Shiv Accounting has transformed our bookkeeping. Their team handles everything efficiently, and our CPA loves the clean tax-ready reports!",
-      author: "US Restaurant Owner",
-      industry: "Hospitality",
-    },
-    {
-      quote:
-        "Our law firm trust accounts have never been this accurate. Shiv Accounting's team is thorough, reliable, and Clio-savvy.",
-      author: "US Law Firm Partner",
-      industry: "Legal Services",
-    },
-  ];
-
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -140,7 +132,7 @@ const AboutUsPage = () => {
         {/* Hero Section */}
         <section
           className="relative py-20 bg-cover bg-center min-h-screen flex items-center"
-          style={{ backgroundImage: `url(${aboutHeroBg})` }}
+          style={{ backgroundImage: `url(${aboutHeroBg.src})` }}
         >
           <div className="absolute inset-0 bg-white/[0.1] sm:bg-white/[0.1] sm:bg-gradient-to-r sm:from-white/[0.1] sm:to-white/10" />
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
@@ -242,7 +234,7 @@ const AboutUsPage = () => {
                   <div className="flex flex-col md:flex-row gap-6 items-center">
                     <div className="flex-shrink-0">
                       <img
-                        src={founderImage}
+                        src={founderImage.src}
                         alt="Kailash Dabhi, Founder of Shiv Accounting"
                         className="w-32 h-32 rounded-full object-cover shadow-professional"
                       />
@@ -393,12 +385,12 @@ const AboutUsPage = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Link to={"/contact"} state={{ scrollTo: "form" }}>
-                <Button variant="cta" size="xl">
+              <Button variant="cta" size="xl" asChild>
+                <Link href="/contact?scrollTo=form">
                   Start Your Accounting Setup{" "}
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
+                </Link>
+              </Button>
             </div>
           </div>
         </section>
@@ -436,56 +428,6 @@ const AboutUsPage = () => {
           </div>
         </section>
 
-        {/* Client Testimonials */}
-        {/* <section className="py-20 bg-gradient-subtle">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                Hear From Our Clients
-              </h2>
-              <p className="text-xl text-muted-foreground">
-                Accuracy & Compliance: Tax-ready financials and timely
-                deliverables • Trusted Since 2019: Proven track record with
-                multiple US clients
-              </p>
-            </div>
-
-            <div className="grid lg:grid-cols-2 gap-8 mb-12">
-              {testimonials.map((testimonial, index) => (
-                <Card
-                  key={index}
-                  className="p-8 hover-lift"
-                  style={{ animationDelay: `${index * 200}ms` }}
-                >
-                  <CardContent className="p-0">
-                    <blockquote className="text-lg italic text-muted-foreground mb-6 leading-relaxed">
-                      "{testimonial.quote}"
-                    </blockquote>
-                    <div>
-                      <div className="font-semibold">{testimonial.author}</div>
-                      <div className="text-sm text-muted-foreground">
-                        {testimonial.industry}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-
-            <div className="text-center space-y-6">
-              <Button variant="outline" size="lg">
-                See More Testimonials
-              </Button>
-              <div>
-                <Button variant="hero" size="xl">
-                  Discover How We Can Help Your Business{" "}
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section> */}
-
         {/* CTA Section */}
         <section className="py-20 bg-gradient-primary text-primary-foreground">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -497,9 +439,9 @@ const AboutUsPage = () => {
               free consultation and see how we can help your business.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="secondary" size="xl">
+              <Button variant="secondary" size="xl" asChild>
                 <Link
-                  to={"https://calendly.com/kailash-shivaccounting/new-meeting"}
+                  href="https://calendly.com/kailash-shivaccounting/new-meeting"
                   target="_blank"
                 >
                   Schedule Free Consultation

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Facebook, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Footer = () => {
   const services = [
@@ -39,7 +39,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-sm">
                 <Mail className="w-4 h-4" />
-                <span>kailash@shivaccounting.com</span>
+                <span>info@shivaccounting.com</span>
               </div>
               <div className="flex items-center gap-3 text-sm">
                 <Phone className="w-4 h-4" />
@@ -93,10 +93,8 @@ const Footer = () => {
               Ready to streamline your accounting? Schedule a free consultation
               today.
             </p>
-            <Button variant="secondary" size="lg" className="w-full">
-              <Link to={"/contact"} state={{ scrollTo: "form" }}>
-                Free Consultation
-              </Link>
+            <Button variant="secondary" size="lg" className="w-full" asChild>
+              <Link href="/contact?scrollTo=form">Free Consultation</Link>
             </Button>
 
             {/* Social Links */}

@@ -1,7 +1,7 @@
 import heroImage from "@/assets/hero-accounting.jpg";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Hero = () => {
   return (
@@ -47,17 +47,15 @@ const Hero = () => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link to={"/contact"} state={{ scrollTo: "form" }}>
-                <Button variant="hero" size="xl" className="group">
+              <Button variant="hero" size="xl" className="group" asChild>
+                <Link href="/contact?scrollTo=form">
                   Schedule a Free Consultation
                   <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
-              <Link to={"/services"}>
-                <Button variant="professional" size="xl">
-                  Explore Our Services
-                </Button>
-              </Link>
+                </Link>
+              </Button>
+              <Button variant="professional" size="xl" asChild>
+                <Link href="/services">Explore Our Services</Link>
+              </Button>
             </div>
           </div>
 
@@ -65,7 +63,7 @@ const Hero = () => {
           <div className="relative animate-slide-down">
             <div className="relative rounded-2xl overflow-hidden shadow-professional-lg">
               <img
-                src={heroImage}
+                src={heroImage.src}
                 alt="Professional accounting team working with financial data and modern technology"
                 className="w-full h-auto object-cover"
               />

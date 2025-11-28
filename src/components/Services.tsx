@@ -16,7 +16,7 @@ import {
   ShoppingCart,
   Users,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 const Services = () => {
   const services = [
@@ -166,24 +166,20 @@ const Services = () => {
               </h3>
               <p className="text-muted-foreground">
                 Our expert team is ready to take over your bookkeeping, payroll,
-                and compliance needs so you can focus on growing your business.
+                and compliance needs so you can focus on growth.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to={"/services"}>
-                  <Button variant="cta" size="xl">
-                    View All Services
-                  </Button>
-                </Link>
-                <Link to={"/contact"} state={{ scrollTo: "form" }}>
-                  <Button variant="professional" size="xl">
-                    Get Custom Quote
-                  </Button>
-                </Link>
+                <Button variant="cta" size="xl" asChild>
+                  <Link href="/services">View All Services</Link>
+                </Button>
+                <Button variant="professional" size="xl" asChild>
+                  <Link href="/contact?scrollTo=form">Get Custom Quote</Link>
+                </Button>
               </div>
             </div>
             <div className="relative">
               <img
-                src={servicesImage}
+                src={servicesImage.src}
                 alt="Professional team analyzing financial reports and business data"
                 className="w-full h-64 object-cover rounded-xl shadow-professional"
               />

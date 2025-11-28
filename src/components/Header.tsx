@@ -1,12 +1,15 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import logo from "../assets/logo.png";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
+  const pathname = usePathname();
 
   const navigation = [
     { name: "Home", href: "/" },
@@ -22,9 +25,9 @@ const Header = () => {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/">
+            <Link href="/">
               <img
-                src={logo}
+                src={logo.src}
                 alt="shiv accounting"
                 className="h-12 w-auto object-contain"
               />
@@ -36,18 +39,16 @@ const Header = () => {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                to={item.href}
+                href={item.href}
                 className={`text-foreground hover:text-primary transition-colors duration-200 font-medium ${
-                  location.pathname === item.href ? "text-primary" : ""
+                  pathname === item.href ? "text-primary" : ""
                 }`}
               >
                 {item.name}
               </Link>
             ))}
-            <Button variant="cta" size="lg">
-              <Link to={"/contact"} state={{ scrollTo: "form" }}>
-                Get Free Consultation
-              </Link>
+            <Button variant="cta" size="lg" asChild>
+              <Link href="/contact?scrollTo=form">Get Free Consultation</Link>
             </Button>
           </div>
 
@@ -71,19 +72,17 @@ const Header = () => {
               {navigation.map((item) => (
                 <Link
                   key={item.name}
-                  to={item.href}
+                  href={item.href}
                   className={`text-foreground hover:text-primary transition-colors duration-200 font-medium py-2 ${
-                    location.pathname === item.href ? "text-primary" : ""
+                    pathname === item.href ? "text-primary" : ""
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </Link>
               ))}
-              <Button variant="cta" size="lg" className="w-full">
-                <Link to={"/contact"} state={{ scrollTo: "form" }}>
-                  Get Free Consultation
-                </Link>
+              <Button variant="cta" size="lg" className="w-full" asChild>
+                <Link href="/contact?scrollTo=form">Get Free Consultation</Link>
               </Button>
             </div>
           </div>

@@ -22,24 +22,18 @@ import {
   ShoppingCart,
   Users,
 } from "lucide-react";
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import servicesHeroBg from "@/assets/services-hero-bg.png";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title:
+    "Professional Accounting Services | Shiv Accounting & Business Services",
+  description:
+    "Comprehensive outsourced accounting, bookkeeping, payroll, and trust accounting services for US businesses, CPAs, and law firms. Starting from $500/month.",
+};
 
 const ServicesPage = () => {
-  useEffect(() => {
-    document.title =
-      "Professional Accounting Services | Shiv Accounting & Business Services";
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute(
-        "content",
-        "Comprehensive outsourced accounting, bookkeeping, payroll, and trust accounting services for US businesses, CPAs, and law firms. Starting from $500/month."
-      );
-    }
-  }, []);
-
   const services = [
     {
       icon: Calculator,
@@ -72,20 +66,6 @@ const ServicesPage = () => {
       ctaText: "Start Payroll Setup",
       pricing: "Custom pricing based on headcount",
     },
-    // {
-    //   icon: FileText,
-    //   title: "Taxation Support (US)",
-    //   shortDesc: "Tax-ready books, 1099 services, and supporting schedules prepared by expert tax professionals for CPA review.",
-    //   deliverables: [
-    //     "Tax-ready bundle preparation",
-    //     "1099/1096 filing support",
-    //     "Form 5472 assistance",
-    //     "Supporting schedules creation",
-    //     "CPA collaboration and review"
-    //   ],
-    //   ctaText: "Request a Tax-Ready Review",
-    //   pricing: "Included with bookkeeping packages"
-    // },
     {
       icon: CreditCard,
       title: "Accounts Payable & Receivable",
@@ -243,7 +223,7 @@ const ServicesPage = () => {
         {/* Hero Section */}
         <section
           className="relative py-20 bg-cover bg-center min-h-screen flex items-center"
-          style={{ backgroundImage: `url(${servicesHeroBg})` }}
+          style={{ backgroundImage: `url(${servicesHeroBg.src})` }}
         >
           <div className="absolute inset-0 bg-white/[0.1] sm:bg-white/[0.1] sm:bg-gradient-to-r sm:from-white/[0.1] sm:to-white/10" />
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
@@ -301,9 +281,6 @@ const ServicesPage = () => {
                       <CardDescription className="text-muted-foreground mb-4">
                         {service.shortDesc}
                       </CardDescription>
-                      {/* <Badge variant="secondary" className="mb-4">
-                        {service.pricing}
-                      </Badge> */}
                     </div>
                   </CardHeader>
                   <CardContent className="space-y-4">
@@ -323,8 +300,12 @@ const ServicesPage = () => {
                         ))}
                       </ul>
                     </div>
-                    <Button variant="outline" className="w-full mt-auto">
-                      <Link to={"/contact"} state={{ scrollTo: "form" }}>
+                    <Button
+                      variant="outline"
+                      className="w-full mt-auto"
+                      asChild
+                    >
+                      <Link href="/contact?scrollTo=form">
                         {service.ctaText}
                       </Link>
                     </Button>
@@ -364,8 +345,8 @@ const ServicesPage = () => {
             </div>
 
             <div className="text-center mt-12">
-              <Button variant="cta" size="xl">
-                <Link to={"/industries"}>
+              <Button variant="cta" size="xl" asChild>
+                <Link href="/industries">
                   Find Out How We Can Support Your Industry
                 </Link>
               </Button>
@@ -418,18 +399,16 @@ const ServicesPage = () => {
               Get started with a free consultation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button variant="cta" size="xl">
+              <Button variant="cta" size="xl" asChild>
                 <Link
-                  to={"https://calendly.com/kailash-shivaccounting/new-meeting"}
+                  href="https://calendly.com/kailash-shivaccounting/new-meeting"
                   target="_blank"
                 >
                   Schedule Free Consultation
                 </Link>
               </Button>
-              <Button variant="professional" size="xl">
-                <Link to={"/contact"} state={{ scrollTo: "form" }}>
-                  Request Custom Quote
-                </Link>
+              <Button variant="professional" size="xl" asChild>
+                <Link href="/contact?scrollTo=form">Request Custom Quote</Link>
               </Button>
             </div>
             <p className="text-sm text-muted-foreground">
