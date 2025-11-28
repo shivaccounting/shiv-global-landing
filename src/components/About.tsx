@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Globe, TrendingUp, Users } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const About = () => {
   const stats = [
@@ -107,9 +108,11 @@ const About = () => {
             <Card className="p-8 bg-gradient-section border-border/50 shadow-professional">
               <div className="flex flex-col md:flex-row gap-6 items-center">
                 <div className="flex-shrink-0">
-                  <img
-                    src={founderImage.src}
+                  <Image
+                    src={founderImage}
                     alt="Kailash, Founder of Shiv Accounting and Business Services"
+                    width={96}
+                    height={96}
                     className="w-24 h-24 rounded-full object-cover shadow-professional"
                   />
                 </div>

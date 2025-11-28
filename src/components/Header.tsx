@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import logo from "../assets/logo.png";
 
 const Header = () => {
@@ -26,9 +27,12 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/">
-              <img
-                src={logo.src}
+              <Image
+                src={logo}
                 alt="shiv accounting"
+                height={48}
+                width={120}
+                priority
                 className="h-12 w-auto object-contain"
               />
             </Link>

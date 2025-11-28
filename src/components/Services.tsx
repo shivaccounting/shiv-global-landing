@@ -17,6 +17,7 @@ import {
   Users,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Services = () => {
   const services = [
@@ -177,11 +178,13 @@ const Services = () => {
                 </Button>
               </div>
             </div>
-            <div className="relative">
-              <img
-                src={servicesImage.src}
+            <div className="relative h-64 rounded-xl overflow-hidden shadow-professional">
+              <Image
+                src={servicesImage}
                 alt="Professional team analyzing financial reports and business data"
-                className="w-full h-64 object-cover rounded-xl shadow-professional"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                className="object-cover"
               />
             </div>
           </div>

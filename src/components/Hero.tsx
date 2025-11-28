@@ -2,6 +2,7 @@ import heroImage from "@/assets/hero-accounting.jpg";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Hero = () => {
   return (
@@ -61,11 +62,14 @@ const Hero = () => {
 
           {/* Hero Image */}
           <div className="relative animate-slide-down">
-            <div className="relative rounded-2xl overflow-hidden shadow-professional-lg">
-              <img
-                src={heroImage.src}
+            <div className="relative rounded-2xl overflow-hidden shadow-professional-lg aspect-[4/3]">
+              <Image
+                src={heroImage}
                 alt="Professional accounting team working with financial data and modern technology"
-                className="w-full h-auto object-cover"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                priority
+                className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-primary/10"></div>
             </div>

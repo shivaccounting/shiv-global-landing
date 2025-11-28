@@ -1,5 +1,4 @@
 import founderImage from "@/assets/founder-portrait.png";
-import aboutHeroBg from "@/assets/about-hero-bg.png";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
@@ -20,6 +19,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { Metadata } from "next";
+import Image from "next/image";
+import aboutHeroBg from "@/assets/hero-accounting.jpg";
 
 export const metadata: Metadata = {
   title: "About Shiv Accounting | Trusted Bookkeeping & Accounting Experts",
@@ -134,7 +135,7 @@ const AboutUsPage = () => {
           className="relative py-20 bg-cover bg-center min-h-screen flex items-center"
           style={{ backgroundImage: `url(${aboutHeroBg.src})` }}
         >
-          <div className="absolute inset-0 bg-white/[0.1] sm:bg-white/[0.1] sm:bg-gradient-to-r sm:from-white/[0.1] sm:to-white/10" />
+          <div className="absolute" />
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 space-y-6 animate-fade-in">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
@@ -144,13 +145,13 @@ const AboutUsPage = () => {
                   Bookkeeping Experts
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-white max-w-3xl mx-auto bg-black/50 p-4 rounded-lg">
                 Accurate, compliant, and tax-ready financial solutions for CPAs,
                 law firms, and small businesses — offshore expertise with US
                 standards.
               </p>
 
-              <p className="text-sm text-muted-foreground">
+              <p className="text-sm text-white max-w-2xl mx-auto bg-black/50 p-2 rounded-lg">
                 Serving US clients since 2019 — QuickBooks, Xero, Clio, ADP,
                 Gusto, Shopify, Amazon, and more.
               </p>
@@ -233,9 +234,11 @@ const AboutUsPage = () => {
                 <Card className="p-8 bg-gradient-section border-border/50 shadow-professional">
                   <div className="flex flex-col md:flex-row gap-6 items-center">
                     <div className="flex-shrink-0">
-                      <img
-                        src={founderImage.src}
+                      <Image
+                        src={founderImage}
                         alt="Kailash Dabhi, Founder of Shiv Accounting"
+                        width={128}
+                        height={128}
                         className="w-32 h-32 rounded-full object-cover shadow-professional"
                       />
                     </div>

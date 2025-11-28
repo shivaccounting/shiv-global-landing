@@ -1,4 +1,5 @@
 // Import logos
+import Image from "next/image";
 import asanaLogo from "@/assets/logos/Asana.png";
 import clioLogo from "@/assets/logos/clio-logo.svg";
 import dextLogo from "@/assets/logos/Dext (1).png";
@@ -10,15 +11,15 @@ import xeroLogo from "@/assets/logos/Xero_(software)-Logo.wine.png";
 import zohoLogo from "@/assets/logos/Zoho_Office_Suite-Logo.wine.png";
 
 const logos = [
-  { src: quickbooksLogo.src, alt: "QuickBooks" },
-  { src: xeroLogo.src, alt: "Xero" },
-  { src: clioLogo.src, alt: "Clio" },
-  { src: adpLogo.src, alt: "ADP" },
-  { src: gustoLogo.src, alt: "Gusto" },
-  { src: shopifyLogo.src, alt: "Shopify" },
-  // { src: asanaLogo.src, alt: "Asana" },
-  { src: dextLogo.src, alt: "Dext" },
-  { src: zohoLogo.src, alt: "Zoho" },
+  { src: quickbooksLogo, alt: "QuickBooks" },
+  { src: xeroLogo, alt: "Xero" },
+  { src: clioLogo, alt: "Clio" },
+  { src: adpLogo, alt: "ADP" },
+  { src: gustoLogo, alt: "Gusto" },
+  { src: shopifyLogo, alt: "Shopify" },
+  // { src: asanaLogo, alt: "Asana" },
+  { src: dextLogo, alt: "Dext" },
+  { src: zohoLogo, alt: "Zoho" },
 ];
 
 const Logo = () => {
@@ -36,11 +37,14 @@ const Logo = () => {
             <div className="relative mt-6 overflow-hidden">
               <div className="flex gap-8 items-center animate-scroll">
                 {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
-                  <img
+                  <Image
                     key={index}
                     src={logo.src}
                     alt={logo.alt}
-                    className="h-16 w-auto object-contain transition-all flex-shrink-0"
+                    height={64}
+                    width={120}
+                    style={{ width: "auto", height: "64px" }}
+                    className="object-contain transition-all flex-shrink-0"
                   />
                 ))}
               </div>

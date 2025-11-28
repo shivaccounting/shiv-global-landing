@@ -23,7 +23,7 @@ import {
   Users,
 } from "lucide-react";
 import Link from "next/link";
-import servicesHeroBg from "@/assets/services-hero-bg.png";
+import servicesHeroBg from "@/assets/services-team.jpg";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -225,7 +225,7 @@ const ServicesPage = () => {
           className="relative py-20 bg-cover bg-center min-h-screen flex items-center"
           style={{ backgroundImage: `url(${servicesHeroBg.src})` }}
         >
-          <div className="absolute inset-0 bg-white/[0.1] sm:bg-white/[0.1] sm:bg-gradient-to-r sm:from-white/[0.1] sm:to-white/10" />
+          <div className="absolute inset-0 bg-white/[0.05] sm:bg-white/[0.05] sm:bg-gradient-to-r sm:from-white/[0.05] sm:to-white/5" />
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center space-y-6 animate-fade-in">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
@@ -235,14 +235,14 @@ const ServicesPage = () => {
                   Accounting Services
                 </span>
               </h1>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-xl text-white max-w-3xl mx-auto bg-black/50 p-4 rounded-lg">
                 Comprehensive outsourced accounting, bookkeeping, payroll, and
                 trust accounting services for US businesses, CPAs, and law
                 firms. Accurate, tax-ready books delivered by certified
                 professionals.
               </p>
 
-              <Badge variant="outline" className="text-base px-4 py-2">
+              <Badge variant="default" className="text-white px-4 py-2">
                 Serving US CPAs, law firms & businesses since 2019
               </Badge>
             </div>
@@ -346,7 +346,7 @@ const ServicesPage = () => {
 
             <div className="text-center mt-12">
               <Button variant="cta" size="xl" asChild>
-                <Link href="/industries">
+                <Link href="/industries" className="text-wrap">
                   Find Out How We Can Support Your Industry
                 </Link>
               </Button>
