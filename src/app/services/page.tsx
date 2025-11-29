@@ -400,10 +400,7 @@ const ServicesPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="cta" size="xl" asChild>
-                <Link
-                  href="https://calendly.com/kailash-shivaccounting/new-meeting"
-                  target="_blank"
-                >
+                <Link href="/contact?scrollTo=form">
                   Schedule Free Consultation
                 </Link>
               </Button>

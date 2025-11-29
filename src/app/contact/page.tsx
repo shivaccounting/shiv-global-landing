@@ -1,6 +1,8 @@
 import Contact from "@/components/Contact";
+import { Suspense } from "react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import PricingCard from "@/components/PricingCard";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,16 +16,17 @@ export const metadata: Metadata = {
   },
 };
 
-import { Suspense } from "react";
-
 const ContactPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-20">
-        <Suspense>
-          <Contact />
-        </Suspense>
+        <section id="contact" className="py-20 bg-gradient-section">
+          <Suspense fallback={<div>Loading...</div>}>
+            <Contact />
+          </Suspense>
+          <PricingCard />
+        </section>
       </main>
       <Footer />
     </div>

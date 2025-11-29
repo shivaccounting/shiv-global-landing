@@ -1,28 +1,43 @@
-// Import logos
+"use client";
+import { useEffect, useState } from "react";
 import Image from "next/image";
-import asanaLogo from "@/assets/logos/Asana.png";
-import clioLogo from "@/assets/logos/clio-logo.svg";
-import dextLogo from "@/assets/logos/Dext (1).png";
-import gustoLogo from "@/assets/logos/Gusto_logo_f45d48.png";
-import quickbooksLogo from "@/assets/logos/pngwing.com (10).png";
-import adpLogo from "@/assets/logos/pngwing.com (13).png";
-import shopifyLogo from "@/assets/logos/shopify_logo_black.png";
-import xeroLogo from "@/assets/logos/Xero_(software)-Logo.wine.png";
-import zohoLogo from "@/assets/logos/Zoho_Office_Suite-Logo.wine.png";
-
-const logos = [
-  { src: quickbooksLogo, alt: "QuickBooks" },
-  { src: xeroLogo, alt: "Xero" },
-  { src: clioLogo, alt: "Clio" },
-  { src: adpLogo, alt: "ADP" },
-  { src: gustoLogo, alt: "Gusto" },
-  { src: shopifyLogo, alt: "Shopify" },
-  // { src: asanaLogo, alt: "Asana" },
-  { src: dextLogo, alt: "Dext" },
-  { src: zohoLogo, alt: "Zoho" },
-];
 
 const Logo = () => {
+  const [logos, setLogos] = useState<{ src: any; alt: string }[]>([]);
+
+  useEffect(() => {
+    const loadLogos = async () => {
+      const [app1, app2, app3, app4, app5, app8, app9, app10, app12, app13] =
+        await Promise.all([
+          import("@/assets/logos/app1.svg"),
+          import("@/assets/logos/app2.png"),
+          import("@/assets/logos/app3.png"),
+          import("@/assets/logos/app4.png"),
+          import("@/assets/logos/app5.png"),
+          import("@/assets/logos/app8.png"),
+          import("@/assets/logos/app9.png"),
+          import("@/assets/logos/app10.png"),
+          import("@/assets/logos/app12.png"),
+          import("@/assets/logos/app13.png"),
+        ]);
+
+      setLogos([
+        { src: app1.default, alt: "Clio" },
+        { src: app2.default, alt: "Dext" },
+        { src: app3.default, alt: "Amazon" },
+        { src: app4.default, alt: "Gusto" },
+        { src: app5.default, alt: "Sage" },
+        { src: app8.default, alt: "Wave" },
+        { src: app9.default, alt: "QuickBooks" },
+        { src: app10.default, alt: "Shopify" },
+        { src: app12.default, alt: "Xero" },
+        { src: app13.default, alt: "Zoho" },
+      ]);
+    };
+
+    loadLogos();
+  }, []);
+
   return (
     <section id="services" className="pb-20 bg-gradient-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -36,9 +51,43 @@ const Logo = () => {
             </div>
             <div className="relative mt-6 overflow-hidden">
               <div className="flex gap-8 items-center animate-scroll">
-                {[...logos, ...logos, ...logos, ...logos].map((logo, index) => (
+                {logos.map((logo, index) => (
                   <Image
                     key={index}
+                    src={logo.src}
+                    alt={logo.alt}
+                    height={64}
+                    width={120}
+                    style={{ width: "auto", height: "64px" }}
+                    className="object-contain transition-all flex-shrink-0"
+                  />
+                ))}
+                {/* Duplicate for infinite scroll effect */}
+                {logos.map((logo, index) => (
+                  <Image
+                    key={`dup-1-${index}`}
+                    src={logo.src}
+                    alt={logo.alt}
+                    height={64}
+                    width={120}
+                    style={{ width: "auto", height: "64px" }}
+                    className="object-contain transition-all flex-shrink-0"
+                  />
+                ))}
+                {logos.map((logo, index) => (
+                  <Image
+                    key={`dup-2-${index}`}
+                    src={logo.src}
+                    alt={logo.alt}
+                    height={64}
+                    width={120}
+                    style={{ width: "auto", height: "64px" }}
+                    className="object-contain transition-all flex-shrink-0"
+                  />
+                ))}
+                {logos.map((logo, index) => (
+                  <Image
+                    key={`dup-3-${index}`}
                     src={logo.src}
                     alt={logo.alt}
                     height={64}

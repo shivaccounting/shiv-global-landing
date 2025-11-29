@@ -1,5 +1,3 @@
-"use client";
-
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
@@ -23,11 +21,9 @@ import {
   UtensilsCrossed,
 } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import industriesHeroBg from "@/assets/about-hero-bg.png";
 
 const IndustriesPage = () => {
-  const router = useRouter();
   const industries = [
     {
       id: "restaurants",
@@ -248,15 +244,15 @@ const IndustriesPage = () => {
                           ))}
                         </ul>
                       </div>
-
-                      <Button
-                        onClick={() => router.push("/contact?scrollTo=form")}
-                        className="w-full hover-scale"
-                        variant="outline"
-                      >
-                        Get Industry-Specific Quote
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
+                      <Link href="/contact?scrollTo=form">
+                        <Button
+                          className="w-full hover-scale"
+                          variant="outline"
+                        >
+                          Get Industry-Specific Quote
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Button>
+                      </Link>
                     </CardContent>
                   </Card>
                 );
@@ -276,10 +272,7 @@ const IndustriesPage = () => {
               unique requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="https://calendly.com/kailash-shivaccounting/new-meeting"
-                target="_blank"
-              >
+              <Link href="/contact?scrollTo=form">
                 <Button size="lg" className="hover-scale">
                   Schedule Free Consultation
                   <ArrowRight className="ml-2 h-4 w-4" />
