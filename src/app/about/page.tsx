@@ -21,6 +21,7 @@ import Link from "next/link";
 import { Metadata } from "next";
 import Image from "next/image";
 import aboutHeroBg from "@/assets/hero-accounting.jpg";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "About Shiv Accounting | Trusted Bookkeeping & Accounting Experts",
@@ -130,57 +131,47 @@ const AboutUsPage = () => {
       <Header />
 
       <main className="pt-20">
-        {/* Hero Section */}
-        <section
-          className="relative py-20 bg-cover bg-center min-h-screen flex items-center"
-          style={{ backgroundImage: `url(${aboutHeroBg.src})` }}
-        >
-          <div className="absolute" />
-          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 space-y-6 animate-fade-in">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
-                Trusted Accounting &
-                <span className="bg-gradient-secondary bg-clip-text text-transparent">
-                  {" "}
-                  Bookkeeping Experts
-                </span>
-              </h1>
-              <p className="text-xl text-white max-w-3xl mx-auto bg-black/50 p-4 rounded-lg">
-                Accurate, compliant, and tax-ready financial solutions for CPAs,
-                law firms, and small businesses — offshore expertise with US
-                standards.
-              </p>
+        <PageHero image={aboutHeroBg}>
+          <div className="text-center mb-16 space-y-6 animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+              Trusted Accounting &
+              <span className="text-accent"> Bookkeeping Experts</span>
+            </h1>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              Accurate, compliant, and tax-ready financial solutions for CPAs,
+              law firms, and small businesses — offshore expertise with US
+              standards.
+            </p>
 
-              <p className="text-sm text-white max-w-2xl mx-auto bg-black/50 p-2 rounded-lg">
-                Serving US clients since 2019 — QuickBooks, Xero, Clio, ADP,
-                Gusto, Shopify, Amazon, and more.
-              </p>
-            </div>
-
-            {/* Stats */}
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {stats.map((stat, index) => (
-                <Card
-                  key={stat.label}
-                  className="text-center hover-lift border-border/50 bg-card/50 backdrop-blur-sm"
-                  style={{ animationDelay: `${index * 100}ms` }}
-                >
-                  <CardContent className="pt-6">
-                    <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-secondary flex items-center justify-center">
-                      <stat.icon className="w-6 h-6 text-secondary-foreground" />
-                    </div>
-                    <div className="text-3xl font-bold text-primary mb-2">
-                      {stat.value}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {stat.label}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            <p className="text-sm text-white/80 max-w-2xl mx-auto">
+              Serving US clients since 2019 — QuickBooks, Xero, Clio, ADP,
+              Gusto, Shopify, Amazon, and more.
+            </p>
           </div>
-        </section>
+
+          {/* Stats */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {stats.map((stat, index) => (
+              <Card
+                key={stat.label}
+                className="text-center hover-lift border-border/50 bg-card/50 backdrop-blur-sm"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <CardContent className="pt-6">
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-secondary flex items-center justify-center">
+                    <stat.icon className="w-6 h-6 text-secondary-foreground" />
+                  </div>
+                  <div className="text-3xl font-bold text-primary mb-2">
+                    {stat.value}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {stat.label}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </PageHero>
 
         {/* Our Story */}
         <section className="py-20">

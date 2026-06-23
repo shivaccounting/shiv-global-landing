@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import servicesHeroBg from "@/assets/services-team.jpg";
+import PageHero from "@/components/PageHero";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -220,34 +221,26 @@ const ServicesPage = () => {
       <Header />
 
       <main className="pt-20">
-        {/* Hero Section */}
-        <section
-          className="relative py-20 bg-cover bg-center min-h-screen flex items-center"
-          style={{ backgroundImage: `url(${servicesHeroBg.src})` }}
-        >
-          <div className="absolute inset-0 bg-white/[0.05] sm:bg-white/[0.05] sm:bg-gradient-to-r sm:from-white/[0.05] sm:to-white/5" />
-          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center space-y-6 animate-fade-in">
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold">
-                Professional
-                <span className="bg-gradient-primary bg-clip-text text-transparent">
-                  {" "}
-                  Accounting Services
-                </span>
-              </h1>
-              <p className="text-xl text-white max-w-3xl mx-auto bg-black/50 p-4 rounded-lg">
-                Comprehensive outsourced accounting, bookkeeping, payroll, and
-                trust accounting services for US businesses, CPAs, and law
-                firms. Accurate, tax-ready books delivered by certified
-                professionals.
-              </p>
+        <PageHero image={servicesHeroBg}>
+          <div className="space-y-6 animate-fade-in">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+              Professional
+              <span className="text-accent"> Accounting Services</span>
+            </h1>
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+              Comprehensive outsourced accounting, bookkeeping, payroll, and
+              trust accounting services for US businesses, CPAs, and law firms.
+              Accurate, tax-ready books delivered by certified professionals.
+            </p>
 
-              <Badge variant="default" className="text-white px-4 py-2">
-                Serving US CPAs, law firms & businesses since 2019
-              </Badge>
-            </div>
+            <Badge
+              variant="default"
+              className="bg-white/15 text-white border-white/25 backdrop-blur-sm px-4 py-2"
+            >
+              Serving US CPAs, law firms & businesses since 2019
+            </Badge>
           </div>
-        </section>
+        </PageHero>
 
         {/* Services Grid */}
         <section className="py-20">

@@ -5,9 +5,12 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import dynamic from "next/dynamic";
 
-const Logo = dynamic(() => import("@/components/Logo"), {
-  loading: () => <></>,
-});
+const SoftwareExpertise = dynamic(
+  () => import("@/components/SoftwareExpertise"),
+  {
+    loading: () => <></>,
+  },
+);
 
 const Index = () => {
   return (
@@ -15,7 +18,7 @@ const Index = () => {
       <Header />
       <main>
         <Hero />
-        <Logo />
+        <SoftwareExpertise />
         <Services />
         <About />
         {/* <Testimonials /> */}

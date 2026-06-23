@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import industriesHeroBg from "@/assets/about-hero-bg.png";
+import PageHero from "@/components/PageHero";
 
 const IndustriesPage = () => {
   const industries = [
@@ -150,31 +151,30 @@ const IndustriesPage = () => {
     <>
       <Header />
       <main className="min-h-screen bg-background">
-        {/* Hero Section */}
-        <section
-          className="relative py-20 px-4 bg-cover bg-center min-h-screen flex items-center"
-          style={{ backgroundImage: `url(${industriesHeroBg.src})` }}
-        >
-          <div className="absolute inset-0 bg-white/[0.05] sm:bg-white/[0.05] sm:bg-gradient-to-r sm:from-white/[0.05] sm:to-white/5" />
-          <div className="max-w-7xl relative z-10 mx-auto text-center">
-            <Badge variant="default" className="mb-6">
+        <PageHero image={industriesHeroBg}>
+          <div className="space-y-6 animate-fade-in">
+            <Badge
+              variant="default"
+              className="bg-white/15 text-white border-white/25 backdrop-blur-sm"
+            >
               Industry Expertise
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Accounting & Bookkeeping Services for Every Industry
+            <h1 className="text-4xl md:text-6xl font-bold text-white">
+              Accounting & Bookkeeping Services for{" "}
+              <span className="text-accent">Every Industry</span>
             </h1>
-            <p className="text-xl text-white max-w-3xl mx-auto bg-black/50 p-4 rounded-lg">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Customized solutions for US CPAs, law firms, small businesses, and
               online sellers. Accuracy, compliance, and efficiency — handled by
               our trained team.
             </p>
 
-            <p className="text-sm text-white max-w-2xl mx-auto bg-black/50 p-2 rounded-lg my-6">
+            <p className="text-sm text-white/80 max-w-2xl mx-auto">
               Serving US businesses since 2019 — QuickBooks, Xero, Clio, ADP,
               and industry-specific expertise.
             </p>
           </div>
-        </section>
+        </PageHero>
 
         {/* Industries Grid */}
         <section className="py-20 px-4">
