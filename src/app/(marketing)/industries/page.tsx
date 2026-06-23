@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,7 +19,6 @@ import {
   UtensilsCrossed,
 } from "lucide-react";
 import Link from "next/link";
-import industriesHeroBg from "@/assets/about-hero-bg.png";
 import PageHero from "@/components/PageHero";
 
 const IndustriesPage = () => {
@@ -149,32 +146,27 @@ const IndustriesPage = () => {
 
   return (
     <>
-      <Header />
-      <main className="min-h-screen bg-background">
-        <PageHero image={industriesHeroBg}>
-          <div className="space-y-6 animate-fade-in">
-            <Badge
-              variant="default"
-              className="bg-white/15 text-white border-white/25 backdrop-blur-sm"
-            >
-              Industry Expertise
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold text-white">
-              Accounting & Bookkeeping Services for{" "}
-              <span className="text-accent">Every Industry</span>
-            </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+      <PageHero
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "Industries" },
+        ]}
+        eyebrow={<Badge variant="secondary">Industry Expertise</Badge>}
+        title="Accounting & Bookkeeping Services for Every Industry"
+        description={
+          <>
+            <p>
               Customized solutions for US CPAs, law firms, small businesses, and
               online sellers. Accuracy, compliance, and efficiency — handled by
               our trained team.
             </p>
-
-            <p className="text-sm text-white/80 max-w-2xl mx-auto">
+            <p className="text-sm mt-4">
               Serving US businesses since 2019 — QuickBooks, Xero, Clio, ADP,
               and industry-specific expertise.
             </p>
-          </div>
-        </PageHero>
+          </>
+        }
+      />
 
         {/* Industries Grid */}
         <section className="py-20 px-4">
@@ -286,8 +278,6 @@ const IndustriesPage = () => {
             </div>
           </div>
         </section>
-      </main>
-      <Footer />
     </>
   );
 };

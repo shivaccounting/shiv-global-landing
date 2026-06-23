@@ -1,6 +1,4 @@
 import founderImage from "@/assets/founder-portrait.png";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -20,7 +18,6 @@ import {
 import Link from "next/link";
 import { Metadata } from "next";
 import Image from "next/image";
-import aboutHeroBg from "@/assets/hero-accounting.jpg";
 import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
@@ -127,41 +124,42 @@ const AboutUsPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-
-      <main className="pt-20">
-        <PageHero image={aboutHeroBg}>
-          <div className="text-center mb-16 space-y-6 animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-              Trusted Accounting &
-              <span className="text-accent"> Bookkeeping Experts</span>
-            </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+    <>
+      <PageHero
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "About Us" },
+        ]}
+        title="Trusted Accounting & Bookkeeping Experts"
+        description={
+          <>
+            <p>
               Accurate, compliant, and tax-ready financial solutions for CPAs,
               law firms, and small businesses — offshore expertise with US
               standards.
             </p>
-
-            <p className="text-sm text-white/80 max-w-2xl mx-auto">
+            <p className="text-sm mt-4">
               Serving US clients since 2019 — QuickBooks, Xero, Clio, ADP,
               Gusto, Shopify, Amazon, and more.
             </p>
-          </div>
+          </>
+        }
+      />
 
-          {/* Stats */}
+      <section className="py-12 border-b border-border/60 bg-muted/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat, index) => (
               <Card
                 key={stat.label}
-                className="text-center hover-lift border-border/50 bg-card/50 backdrop-blur-sm"
+                className="text-center border-border/60 bg-card shadow-sm"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <CardContent className="pt-6">
-                  <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-gradient-secondary flex items-center justify-center">
-                    <stat.icon className="w-6 h-6 text-secondary-foreground" />
+                  <div className="w-12 h-12 mx-auto mb-4 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <stat.icon className="w-6 h-6 text-primary" />
                   </div>
-                  <div className="text-3xl font-bold text-primary mb-2">
+                  <div className="font-mono text-3xl font-bold text-primary mb-2">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground">
@@ -171,7 +169,8 @@ const AboutUsPage = () => {
               </Card>
             ))}
           </div>
-        </PageHero>
+        </div>
+      </section>
 
         {/* Our Story */}
         <section className="py-20">
@@ -448,10 +447,7 @@ const AboutUsPage = () => {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 

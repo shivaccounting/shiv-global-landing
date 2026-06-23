@@ -62,19 +62,16 @@ const PricingCard = () => {
         {pricingPlans.map((plan, index) => (
           <Card
             key={plan.name}
-            className={`relative hover-lift ${
+            className={`relative ${
               plan.popular
-                ? "border-accent shadow-glow bg-gradient-accent/5"
-                : "border-border/50 bg-card/50"
-            } backdrop-blur-sm`}
+                ? "border-accent shadow-sm bg-accent/5"
+                : "border-border/60 bg-card"
+            } border shadow-sm`}
             style={{ animationDelay: `${index * 100}ms` }}
           >
             {plan.popular && (
               <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                <Badge
-                  variant="secondary"
-                  className="bg-accent text-accent-foreground"
-                >
+                <Badge variant="secondary" className="bg-accent text-accent-foreground">
                   Most Popular
                 </Badge>
               </div>
@@ -83,7 +80,7 @@ const PricingCard = () => {
             <CardHeader className="text-center pb-8">
               <CardTitle className="text-xl mb-4">{plan.name}</CardTitle>
               <div className="space-y-1">
-                <div className="text-3xl font-bold">
+                <div className="font-mono text-3xl font-bold">
                   {plan.price}
                   <span className="text-sm text-muted-foreground font-normal">
                     {plan.period}

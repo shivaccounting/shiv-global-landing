@@ -1,5 +1,3 @@
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -23,7 +21,6 @@ import {
   Users,
 } from "lucide-react";
 import Link from "next/link";
-import servicesHeroBg from "@/assets/services-team.jpg";
 import PageHero from "@/components/PageHero";
 import { Metadata } from "next";
 
@@ -217,30 +214,26 @@ const ServicesPage = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-
-      <main className="pt-20">
-        <PageHero image={servicesHeroBg}>
-          <div className="space-y-6 animate-fade-in">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
-              Professional
-              <span className="text-accent"> Accounting Services</span>
-            </h1>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
+    <>
+      <PageHero
+        breadcrumb={[
+          { label: "Home", href: "/" },
+          { label: "Services" },
+        ]}
+        title="Professional Accounting Services"
+        description={
+          <>
+            <p>
               Comprehensive outsourced accounting, bookkeeping, payroll, and
               trust accounting services for US businesses, CPAs, and law firms.
               Accurate, tax-ready books delivered by certified professionals.
             </p>
-
-            <Badge
-              variant="default"
-              className="bg-white/15 text-white border-white/25 backdrop-blur-sm px-4 py-2"
-            >
+            <Badge variant="secondary" className="mt-4">
               Serving US CPAs, law firms & businesses since 2019
             </Badge>
-          </div>
-        </PageHero>
+          </>
+        }
+      />
 
         {/* Services Grid */}
         <section className="py-20">
@@ -407,10 +400,7 @@ const ServicesPage = () => {
             </p>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 

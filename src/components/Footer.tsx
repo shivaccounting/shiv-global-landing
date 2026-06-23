@@ -58,12 +58,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service}>
-                  <a
-                    href="#services"
+                  <Link
+                    href="/services"
                     className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {service}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -75,12 +75,12 @@ const Footer = () => {
             <ul className="space-y-2">
               {industries.map((industry) => (
                 <li key={industry}>
-                  <a
-                    href="#about"
+                  <Link
+                    href="/industries"
                     className="text-sm text-primary-foreground/80 hover:text-primary-foreground transition-colors"
                   >
                     {industry}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>

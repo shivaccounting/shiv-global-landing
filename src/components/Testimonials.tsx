@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Quote } from "lucide-react";
+import SectionLabel from "./SectionLabel";
 
 const Testimonials = () => {
   const testimonials = [
@@ -54,48 +55,42 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-subtle">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16 space-y-4 animate-fade-in">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold">
-            What Our 
-            <span className="bg-gradient-primary bg-clip-text text-transparent"> US Clients Say</span>
+    <section className="py-24 md:py-32 bg-background relative overflow-hidden">
+      <div className="absolute inset-0 bg-mesh opacity-40 pointer-events-none" />
+      <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16 space-y-4 max-w-3xl mx-auto">
+          <SectionLabel>Testimonials</SectionLabel>
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-foreground mt-4">
+            What Our US Clients Say
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Don't just take our word for it. Here's what CPAs, law firms, and business owners 
+          <p className="text-lg md:text-xl text-muted-foreground">
+            Don&apos;t just take our word for it. Here&apos;s what CPAs, law firms, and business owners 
             across America are saying about our services.
           </p>
         </div>
 
-        {/* Testimonials Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
+        <div className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide md:grid md:grid-cols-2 lg:grid-cols-3 md:overflow-visible md:pb-0">
+          {testimonials.map((testimonial) => (
             <Card 
               key={testimonial.name}
-              className="hover-lift border-border/50 bg-card/50 backdrop-blur-sm relative overflow-hidden"
-              style={{ animationDelay: `${index * 100}ms` }}
+              className="min-w-[300px] md:min-w-0 snap-start border-border/60 bg-card/80 backdrop-blur-sm shadow-sm hover:shadow-lg hover:border-primary/20 transition-all duration-300 relative shrink-0"
             >
               <CardContent className="p-8 space-y-6">
-                {/* Quote Icon */}
                 <div className="absolute top-6 right-6 opacity-10">
                   <Quote className="w-12 h-12 text-primary" />
                 </div>
 
-                {/* Rating */}
                 <div className="flex gap-1">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-accent text-accent" />
                   ))}
                 </div>
 
-                {/* Quote */}
-                <blockquote className="text-muted-foreground leading-relaxed">
-                  "{testimonial.quote}"
+                <blockquote className="text-muted-foreground leading-relaxed text-sm">
+                  &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
 
-                {/* Author */}
-                <div className="space-y-1 pt-4 border-t border-border/50">
+                <div className="space-y-1 pt-4 border-t border-border/60">
                   <div className="font-semibold text-foreground">{testimonial.name}</div>
                   <div className="text-sm text-muted-foreground">{testimonial.role}</div>
                   <div className="text-sm text-primary font-medium">{testimonial.company}</div>
@@ -106,24 +101,23 @@ const Testimonials = () => {
           ))}
         </div>
 
-        {/* Trust Indicators */}
-        <div className="mt-16 text-center space-y-8 animate-fade-in">
-          <div className="flex flex-wrap justify-center gap-8 items-center opacity-60">
-            <div className="text-center">
-              <div className="text-2xl font-bold text-success">500+</div>
-              <div className="text-sm text-muted-foreground">Happy Clients</div>
+        <div className="mt-16 pt-8 border-t border-border/60">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="rounded-2xl border border-border/60 bg-card p-5 text-center">
+              <div className="font-mono text-2xl font-bold text-success">500+</div>
+              <div className="text-sm text-muted-foreground mt-1">Happy Clients</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-success">99.9%</div>
-              <div className="text-sm text-muted-foreground">Accuracy Rate</div>
+            <div className="rounded-2xl border border-border/60 bg-card p-5 text-center">
+              <div className="font-mono text-2xl font-bold text-success">99.9%</div>
+              <div className="text-sm text-muted-foreground mt-1">Accuracy Rate</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-success">45+</div>
-              <div className="text-sm text-muted-foreground">US States Served</div>
+            <div className="rounded-2xl border border-border/60 bg-card p-5 text-center">
+              <div className="font-mono text-2xl font-bold text-success">45+</div>
+              <div className="text-sm text-muted-foreground mt-1">US States Served</div>
             </div>
-            <div className="text-center">
-              <div className="text-2xl font-bold text-success">5+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
+            <div className="rounded-2xl border border-border/60 bg-card p-5 text-center">
+              <div className="font-mono text-2xl font-bold text-success">5+</div>
+              <div className="text-sm text-muted-foreground mt-1">Years Experience</div>
             </div>
           </div>
         </div>

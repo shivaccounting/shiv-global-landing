@@ -53,7 +53,7 @@ export const SOFTWARE_CATEGORIES: {
   { id: "property", label: "Property Management" },
   { id: "ecom", label: "E-commerce" },
   { id: "payroll", label: "Payroll" },
-  { id: "payments", label: "Payments" },
+  { id: "payments", label: "Accounts Payable and Receivable" },
 ];
 
 export const SOFTWARE_LOGOS: SoftwareLogo[] = [

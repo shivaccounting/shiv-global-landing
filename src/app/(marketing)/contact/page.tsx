@@ -1,7 +1,5 @@
 import Contact from "@/components/Contact";
 import { Suspense } from "react";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import PricingCard from "@/components/PricingCard";
 import { Metadata } from "next";
 
@@ -18,18 +16,14 @@ export const metadata: Metadata = {
 
 const ContactPage = () => {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main className="pt-20">
-        <section id="contact" className="py-20 bg-gradient-section">
-          <Suspense fallback={<div>Loading...</div>}>
-            <Contact />
-          </Suspense>
-          <PricingCard />
-        </section>
-      </main>
-      <Footer />
-    </div>
+    <section id="contact" className="py-20 md:py-24 bg-background">
+      <Suspense fallback={<div>Loading...</div>}>
+        <Contact />
+      </Suspense>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <PricingCard />
+      </div>
+    </section>
   );
 };
 
