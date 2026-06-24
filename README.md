@@ -1,73 +1,72 @@
-# Welcome to your Lovable project
+# Shiv Global Landing
 
-## Project info
+Marketing website for **Shiv Global** — outsourced accounting, bookkeeping, payroll, and compliance services for US businesses, CPAs, and accounting firms.
 
-**URL**: https://lovable.dev/projects/a40cbc60-0c89-4fb3-8b86-3ded19ed4539
+## Features
 
-## How can I edit this code?
+- **Home** — Hero, software expertise, services overview, process, about stats, and pricing teaser
+- **Services** — Detailed breakdown of bookkeeping, payroll, AP/AR, law firm accounting, e-commerce accounting, and white-label outsourcing
+- **Industries** — Industry-specific accounting solutions
+- **About** — Company background and key metrics
+- **Contact** — Google Form integration for inquiries
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- [Next.js](https://nextjs.org/) 16 (App Router)
+- [React](https://react.dev/) 18
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Radix UI](https://www.radix-ui.com/) + [shadcn/ui](https://ui.shadcn.com/) components
+- [Lucide React](https://lucide.dev/) icons
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/a40cbc60-0c89-4fb3-8b86-3ded19ed4539) and start prompting.
+## Getting Started
 
-Changes made via Lovable will be committed automatically to this repo.
+### Prerequisites
 
-**Use your preferred IDE**
+- Node.js 18+
+- npm
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### Installation
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+```bash
+git clone <repository-url>
+cd shiv-global-landing
+npm install
+```
 
-Follow these steps:
+### Development
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Production Build
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+npm start
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Lint
 
-## What technologies are used for this project?
+```bash
+npm run lint
+```
 
-This project is built with:
+## Project Structure
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```
+src/
+├── app/              # Next.js App Router pages and layouts
+├── components/       # Reusable UI and section components
+├── data/             # Site content and configuration
+├── hooks/            # Custom React hooks
+├── lib/              # Utility functions
+└── assets/           # Images and software logos
+```
 
-## How can I deploy this project?
+## 🛠️ Managed By
 
-Simply open [Lovable](https://lovable.dev/projects/a40cbc60-0c89-4fb3-8b86-3ded19ed4539) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This site is managed by **[Meet Rakholiya](https://github.com/Meet587)** ([@Meet587](https://github.com/Meet587)) 👨‍💻 ✨
