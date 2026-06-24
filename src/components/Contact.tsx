@@ -1,20 +1,14 @@
 "use client";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { GOOGLE_FORM } from "@/data/content";
-import { CheckCircle, Clock, Loader2, Mail, MapPin, Phone } from "lucide-react";
-import { useEffect, useState } from "react";
+import { CheckCircle, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { toast } from "sonner";
 
 const Contact = () => {
   const searchParams = useSearchParams();
   const scrollTo = searchParams.get("scrollTo");
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
     if (scrollTo) {
@@ -46,35 +40,6 @@ const Contact = () => {
     },
   ];
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    setIsSubmitting(true);
-
-    const formData = new FormData(form);
-    const payload = new URLSearchParams();
-    payload.append(GOOGLE_FORM.fields.name, formData.get("name") as string);
-    payload.append(GOOGLE_FORM.fields.email, formData.get("email") as string);
-    payload.append(GOOGLE_FORM.fields.phone, formData.get("phone") as string);
-    payload.append(GOOGLE_FORM.fields.message, formData.get("message") as string);
-
-    try {
-      await fetch(GOOGLE_FORM.action, {
-        method: "POST",
-        mode: "no-cors",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: payload.toString(),
-      });
-      toast.success("Thank you! Your message has been submitted.");
-      form.reset();
-    } catch(error) {
-      console.error(error);
-      toast.error("Something went wrong. Please try again or email us directly.");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
       <div className="text-center mb-16 space-y-4 max-w-3xl mx-auto">
@@ -91,60 +56,20 @@ const Contact = () => {
       </div>
 
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20" id="form">
-        <Card className="border-border/60 bg-card shadow-sm">
-          <CardContent className="p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="space-y-2">
-                <Label htmlFor="name">Name *</Label>
-                <Input id="name" name="name" required placeholder="Your name" />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="email">Email Address *</Label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="you@company.com"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number</Label>
-                <Input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="+1 (555) 000-0000"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="message">How can we help you? *</Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  required
-                  placeholder="Tell us about your accounting needs..."
-                />
-              </div>
-              <Button
-                type="submit"
-                variant="cta"
-                size="xl"
-                className="w-full"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  <>
-                    <Loader2 className="w-5 h-5 animate-spin" />
-                    Submitting...
-                  </>
-                ) : (
-                  "Submit"
-                )}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+        <div className="w-full min-h-[800px] rounded-xl border border-border/60 bg-card shadow-sm overflow-hidden">
+          <iframe
+            src={GOOGLE_FORM.embed}
+            width="100%"
+            height="100%"
+            frameBorder="0"
+            marginHeight={0}
+            marginWidth={0}
+            className="w-full h-full"
+            title="Contact Form"
+          >
+            Loading…
+          </iframe>
+        </div>
 
         <div className="space-y-8">
           <div className="grid sm:grid-cols-2 gap-4">

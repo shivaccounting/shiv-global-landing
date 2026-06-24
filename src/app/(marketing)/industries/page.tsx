@@ -1,15 +1,10 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
+  AlertCircle,
   ArrowRight,
-  CheckCircle,
+  Check,
+  CircleCheck,
   Factory,
   Globe,
   Scale,
@@ -20,6 +15,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import SectionLabel from "@/components/SectionLabel";
+import { cn } from "@/lib/utils";
 
 const IndustriesPage = () => {
   const industries = [
@@ -144,6 +141,16 @@ const IndustriesPage = () => {
     },
   ];
 
+  const iconAccents = [
+    "from-primary/15 to-secondary/10",
+    "from-secondary/15 to-primary/10",
+    "from-primary/15 to-accent/10",
+    "from-accent/15 to-secondary/10",
+    "from-secondary/15 to-primary/10",
+    "from-primary/15 to-secondary/10",
+    "from-accent/15 to-primary/10",
+  ];
+
   return (
     <>
       <PageHero
@@ -169,84 +176,126 @@ const IndustriesPage = () => {
       />
 
         {/* Industries Grid */}
-        <section className="py-20 px-4">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <section className="py-20 px-4 relative overflow-hidden">
+          <div className="absolute inset-0 bg-mesh opacity-30 pointer-events-none" />
+          <div className="max-w-7xl mx-auto relative">
+            <div className="text-center mb-16 space-y-4 max-w-2xl mx-auto">
+              <SectionLabel>Industries</SectionLabel>
+              <h2 className="text-3xl md:text-4xl font-semibold text-foreground">
                 Industries We Serve
               </h2>
-              <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              <p className="text-lg text-muted-foreground">
                 Specialized accounting solutions tailored to the unique needs of
                 your industry
               </p>
             </div>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {industries.map((industry) => {
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {industries.map((industry, index) => {
                 const IconComponent = industry.icon;
                 return (
-                  <Card
+                  <article
                     key={industry.id}
-                    className="hover-scale transition-all duration-300 hover:shadow-lg"
+                    style={{ animationDelay: `${index * 80}ms` }}
+                    className={cn(
+                      "group relative flex flex-col rounded-2xl p-6 md:p-7 overflow-hidden",
+                      "gradient-border bg-card/80 backdrop-blur-sm border border-border/50",
+                      "transition-all duration-300 hover:-translate-y-1",
+                      "hover:shadow-xl hover:shadow-primary/8 hover:border-primary/20",
+                      "animate-in fade-in slide-in-from-bottom-4 duration-700 [animation-fill-mode:both]",
+                    )}
                   >
-                    <CardHeader>
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="p-2 rounded-lg bg-primary/10">
-                          <IconComponent className="h-6 w-6 text-primary" />
+                    <div
+                      className={cn(
+                        "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500",
+                        "bg-gradient-to-br from-primary/[0.03] via-transparent to-secondary/[0.04]",
+                      )}
+                    />
+
+                    <span className="absolute top-5 right-5 font-mono text-4xl font-bold leading-none text-primary/[0.06] group-hover:text-primary/10 transition-colors duration-300 select-none">
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
+
+                    <div className="relative z-10 flex flex-col h-full">
+                      <div className="flex items-start gap-4 mb-5">
+                        <div
+                          className={cn(
+                            "w-12 h-12 rounded-xl flex items-center justify-center shrink-0",
+                            "bg-gradient-to-br transition-transform duration-300 group-hover:scale-110",
+                            iconAccents[index],
+                          )}
+                        >
+                          <IconComponent className="w-5 h-5 text-primary" />
                         </div>
-                        <CardTitle className="text-xl">
-                          {industry.title}
-                        </CardTitle>
-                      </div>
-                      <CardDescription className="text-base">
-                        {industry.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent className="space-y-6">
-                      <div>
-                        <h4 className="font-semibold text-sm uppercase tracking-wide text-destructive mb-3">
-                          Common Challenges:
-                        </h4>
-                        <ul className="space-y-2">
-                          {industry.challenges.map((challenge, index) => (
-                            <li
-                              key={index}
-                              className="text-sm text-muted-foreground flex items-start gap-2"
-                            >
-                              <div className="w-1.5 h-1.5 rounded-full bg-destructive/60 mt-2 flex-shrink-0" />
-                              {challenge}
-                            </li>
-                          ))}
-                        </ul>
+                        <div className="min-w-0 pr-8">
+                          <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                            {industry.title}
+                          </h3>
+                          <p className="text-sm text-muted-foreground mt-1 leading-relaxed">
+                            {industry.description}
+                          </p>
+                        </div>
                       </div>
 
-                      <div>
-                        <h4 className="font-semibold text-sm uppercase tracking-wide text-primary mb-3">
-                          Our Solutions:
-                        </h4>
-                        <ul className="space-y-2">
-                          {industry.services.map((service, index) => (
-                            <li
-                              key={index}
-                              className="text-sm text-muted-foreground flex items-start gap-2"
-                            >
-                              <CheckCircle className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
-                              {service}
-                            </li>
-                          ))}
-                        </ul>
+                      <div className="space-y-4 flex-1">
+                        <div className="rounded-xl border border-accent/20 border-l-[3px] border-l-accent bg-accent/[0.05] p-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="flex h-6 w-6 items-center justify-center rounded-md bg-accent/15">
+                              <AlertCircle className="h-3.5 w-3.5 text-accent" />
+                            </span>
+                            <h4 className="text-xs font-semibold uppercase tracking-wider text-accent">
+                              Common Challenges
+                            </h4>
+                          </div>
+                          <ul className="space-y-2.5">
+                            {industry.challenges.map((challenge) => (
+                              <li
+                                key={challenge}
+                                className="text-sm text-foreground/75 flex items-start gap-2.5 leading-relaxed"
+                              >
+                                <span className="mt-[7px] h-1.5 w-1.5 rounded-full bg-accent/70 shrink-0" />
+                                {challenge}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+
+                        <div className="rounded-xl border border-success/25 border-l-[3px] border-l-success bg-success/[0.06] p-4">
+                          <div className="flex items-center gap-2 mb-3">
+                            <span className="flex h-6 w-6 items-center justify-center rounded-md bg-success/15">
+                              <CircleCheck className="h-3.5 w-3.5 text-success" />
+                            </span>
+                            <h4 className="text-xs font-semibold uppercase tracking-wider text-success">
+                              Our Solutions
+                            </h4>
+                          </div>
+                          <ul className="space-y-2.5">
+                            {industry.services.map((service) => (
+                              <li
+                                key={service}
+                                className="text-sm text-foreground/85 flex items-start gap-2.5 leading-relaxed"
+                              >
+                                <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-success/15 mt-0.5">
+                                  <Check className="h-2.5 w-2.5 text-success" strokeWidth={3} />
+                                </span>
+                                {service}
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
-                      <Link href="/contact?scrollTo=form">
-                        <Button
-                          className="w-full hover-scale"
-                          variant="outline"
-                        >
-                          Get Industry-Specific Quote
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </Button>
+
+                      <Link
+                        href="/contact?scrollTo=form"
+                        className="group/link mt-6 pt-5 border-t border-border/50 flex items-center gap-2 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-primary"
+                      >
+                        <span>Get industry-specific quote</span>
+                        <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-muted/80 transition-all duration-300 group-hover/link:bg-primary group-hover/link:text-primary-foreground group-hover/link:translate-x-0.5">
+                          <ArrowRight className="h-3.5 w-3.5" />
+                        </span>
                       </Link>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  </article>
                 );
               })}
             </div>

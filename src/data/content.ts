@@ -121,12 +121,6 @@ export const ABOUT_STATS = [
 ] as const;
 
 export const GOOGLE_FORM = {
-  action:
-    "https://docs.google.com/forms/d/e/1FAIpQLScQ2CKaTjoA1tRITMSZBgsda7tLSsJZxvwUaO3s5gK9N6tDZQ/formResponse",
-  fields: {
-    name: "entry.593570370",
-    email: "entry.1953693080",
-    phone: "entry.1192863462",
-    message: "entry.1857754470",
-  },
+  embed:
+    "https://docs.google.com/forms/d/e/1FAIpQLScQ2CKaTjoA1tRITMSZBgsda7tLSsJZxvwUaO3s5gK9N6tDZQ/viewform?embedded=true",
 } as const;
